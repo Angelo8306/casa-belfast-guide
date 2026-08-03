@@ -29,6 +29,22 @@ h1,h2,h3,.serif{font-family:'Fraunces',serif}
 .langs button{border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:inherit;font-weight:700;
   font-size:.78rem;padding:5px 12px;border-radius:99px;cursor:pointer;transition:.18s}
 .langs button.on{background:var(--ink);color:var(--sand)}
+/* sprung-navigation */
+.secnav{position:sticky;top:58px;z-index:49;background:rgba(246,241,231,.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);display:flex;gap:7px;overflow-x:auto;padding:9px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.secnav::-webkit-scrollbar{display:none}
+.secnav button{flex:none;border:1.5px solid var(--line);background:var(--white);color:var(--ink);font:inherit;
+  font-size:.78rem;font-weight:700;padding:6px 13px;border-radius:99px;cursor:pointer;white-space:nowrap}
+.secnav button.done{border-color:var(--ok);color:var(--ok)}
+.secnav button.done:before{content:"✓ "}
+/* akkordeon */
+section h2{cursor:pointer;position:relative;padding-right:34px;-webkit-tap-highlight-color:transparent}
+section h2:after{content:"−";position:absolute;right:2px;top:0;font-family:'Archivo',sans-serif;font-weight:400;
+  color:var(--ochre);font-size:1.6rem;line-height:1.1}
+section.closed h2:after{content:"+"}
+section.closed .secbody{display:none}
+section.closed{padding:22px 0}
+section .snum{margin-bottom:4px}
 /* hero */
 .hero{padding:72px 0 40px}
 .eyebrow{display:inline-block;font-weight:700;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;
@@ -136,7 +152,57 @@ textarea:focus,input:focus{outline:none;border-color:var(--ochre)}
 .btn.wa{background:#39c05c;color:#fff;border-color:#39c05c}
 .btn.ghost{background:transparent;color:var(--sand);border-color:var(--sand)}
 .btn:hover{transform:translateY(-1px)}
-footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
+footer{padding:50px 0 140px;color:var(--ink2);font-size:.88rem}
+/* foto-checkliste */
+.reqs{display:flex;flex-direction:column;gap:12px}
+.req{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px}
+.req .rhead{display:flex;align-items:center;gap:10px}
+.req .rtitle{flex:1;font-weight:700;font-size:.95rem}
+.req .rbadge{flex:none;font-size:.72rem;font-weight:700;border-radius:99px;padding:3px 10px;background:var(--sand2);color:var(--ink2)}
+.req.has .rbadge{background:#e4ecdf;color:var(--ok)}
+.req.has .rtitle{color:var(--ok)}
+.req .rbtn{margin-top:10px}
+.req .pgrid{margin-top:10px}
+/* wizard */
+.wprog{position:fixed;top:0;left:0;height:3px;background:var(--ochre);z-index:70;transition:width .3s;width:0}
+body.wizard .hero, body.wizard section{display:none}
+body.wizard .hero.active{display:block}
+body.wizard section.active{display:block;border-top:none;padding-top:26px}
+body.wizard section h2{cursor:default;padding-right:0}
+body.wizard section h2:after{display:none}
+body.wizard footer{display:none}
+.wizbar-step{flex:1;text-align:center;font-size:.82rem;color:#b7ac99;min-width:0}
+.wizbar-step b{color:var(--ochre)}
+.btn.nav{background:transparent;color:var(--sand);border-color:var(--sand);min-height:44px}
+.btn.nav:disabled{opacity:.35;cursor:default;transform:none}
+.btn.next{background:var(--ochre);border-color:var(--ochre);color:#fff;min-height:44px}
+.startrow{margin-top:26px}
+.startrow .btn{background:var(--ink);color:var(--sand);border-color:var(--ink);font-size:1rem;padding:14px 30px;min-height:48px}
+.sumlist{display:flex;flex-direction:column;gap:10px}
+.sumitem{display:flex;align-items:center;gap:12px;background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;cursor:pointer;min-height:44px}
+.sumitem .st{flex:1;font-weight:700;font-size:.95rem}
+.sumitem .ss{font-size:.78rem;color:var(--ink2)}
+.sumitem.ok{border-color:var(--ok)}
+.sumitem.ok .ss{color:var(--ok);font-weight:700}
+.sumitem .go{color:var(--ochre);font-weight:700;font-size:.82rem;white-space:nowrap}
+.secnav button{min-height:38px}
+/* mobile */
+@media(max-width:820px){
+  .hero{padding:38px 0 26px}
+  .hero h1{font-size:2rem}
+  .lede{font-size:.98rem}
+  section{padding:30px 0}
+  .tour iframe{height:320px}
+  .opt img{height:190px}
+  .card img{height:150px}
+  .quote{font-size:1.05rem;padding:20px 20px}
+  .sendbar .wrap{padding:9px 14px;gap:8px}
+  .sendbar .cnt{font-size:.72rem;min-width:0;flex-basis:100%;order:-1;text-align:center}
+  .btn{padding:8px 14px;font-size:.82rem}
+  .top .wrap{height:50px}
+  .secnav{top:50px}
+  .advice{gap:16px}
+}
 .reveal{opacity:0;transform:translateY(18px);transition:.6s ease}
 .reveal.vis{opacity:1;transform:none}
 .imgnote{font-size:.78rem;color:var(--ink2);font-style:italic;margin-top:10px}
@@ -151,11 +217,14 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
   </div>
 </div></div>
 
+<nav class="secnav" id="secnav"></nav>
+
 <header class="hero"><div class="wrap">
   <span class="eyebrow" data-i="eyebrow"></span>
   <h1><span data-i="h1a"></span><br><span data-i="h1b" style="color:var(--ochre)"></span></h1>
   <p class="lede" data-i="lede"></p>
   <div class="note"><span class="dot"></span><span data-i="livenote"></span></div>
+    <div class="startrow"><button class="btn" id="startbtn" data-i="w_start"></button></div>
 </div></header>
 
 <section id="tour"><div class="wrap reveal">
@@ -372,9 +441,15 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
   <div class="snum">10</div>
   <h2 data-i="ph_h"></h2>
   <p class="sub" data-i="ph_s"></p>
-  <div class="upzone" id="upzone"><div class="big" data-i="ph_btn"></div><div style="font-size:.82rem;color:var(--ink2);margin-top:4px" data-i="ph_hint"></div></div>
+  <div class="reqs" id="reqs"></div>
   <input type="file" id="upinput" accept="image/*" multiple style="display:none">
-  <div class="pgrid" id="pgrid"></div>
+</div></section>
+
+<section id="send"><div class="wrap reveal">
+  <div class="snum">11</div>
+  <h2 data-i="w_send_h"></h2>
+  <p class="sub" data-i="w_send_s"></p>
+  <div class="sumlist" id="sumlist"></div>
 </div></section>
 
 <footer><div class="wrap">
@@ -382,10 +457,14 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
   <p style="margin-top:6px" data-i="foot2"></p>
 </div></footer>
 
+<div class="wprog" id="wprog"></div>
 <div class="sendbar"><div class="wrap">
-  <span class="cnt"><b id="anscount">0</b> <span data-i="answered"></span></span>
-  <button class="btn ghost" id="copybtn" data-i="copy"></button>
-  <button class="btn wa" id="wabtn" data-i="send"></button>
+  <button class="btn nav" id="backbtn">‹</button>
+  <span class="wizbar-step" id="wizstep"></span>
+  <span class="cnt" id="cntwrap" style="display:none"><b id="anscount">0</b> <span data-i="answered"></span></span>
+  <button class="btn ghost" id="copybtn" data-i="copy" style="display:none"></button>
+  <button class="btn wa" id="wabtn" data-i="send" style="display:none"></button>
+  <button class="btn next" id="nextbtn"></button>
 </div></div>
 
 <script>
@@ -397,6 +476,13 @@ es: {
   livenote:"Documento vivo: sus respuestas y comentarios nos llegan directamente por WhatsApp con un clic.",
   ideas_h:"Ideas para añadir con un “+”", ideas_s:"Asesoramiento creativo: cosas que ahora — con andamios montados y paredes abiertas — salen mucho mejor y más baratas que después. Añada lo que le inspire; lo calculamos como opción.",
   t_idea:"Idea", add:"+ Añadir a mi plan", added:"✓ Añadido",
+  w_start:"Empezar — 5 minutos", w_next:"Siguiente", w_back:"Atrás", w_tosummary:"Al resumen", w_step:"Paso", w_of:"de", n_send:"Enviar",
+  w_send_h:"¡Listo! Revise y envíe", w_send_s:"Así está su recorrido. Puede volver a cualquier paso — nada se pierde. Al enviar se crea un PDF con todo (respuestas, comentarios, fotos) y se abre WhatsApp.",
+  w_open:"abrir", w_none:"pendiente", w_ans:"respondido", w_pdfmaking:"Creando PDF…", w_sent:"✓ Enviado — ¡gracias!",
+  n_tour:"3D-Tour", n_find:"Hallazgos", n_damp:"Humedad", n_roof:"Cubierta", n_stone:"Piedra", n_stairs:"Escalera", n_ideas:"Ideas", n_extra:"Cocina y baño", n_scope:"Lista", n_photos:"Fotos",
+  ph_s2:"Trabaje la lista poco a poco — cada punto con su propio botón. Todo se guarda en su dispositivo y entra en el PDF.",
+  pr1:"Revestimiento inferior de los muros, de cerca (zócalo, transiciones)", pr2:"Documentos o facturas de la reforma anterior (fotografiarlos)", pr3:"Fisuras del techo de la cocina (cerca + vista general)", pr4:"Grietas en otras estancias (si las hay)", pr5:"Baño del patio completo (techo, WC, paredes)", pr6:"Manchas de humedad o moho que usted vea", pr7:"Otros detalles que quiera enseñarnos",
+  ph_take:"+ Subir foto", ph_none:"pendiente", ph_some:"foto(s)",
   ph_h:"Envíenos más detalles en fotos", ph_s:"Grietas, documentos antiguos, rincones que le preocupan: suba fotos aquí. Se guardan de forma segura en su dispositivo y se incluyen automáticamente en el PDF de respuestas que se crea al enviar.", ph_btn:"+ Subir fotos", ph_hint:"También puede hacer la foto directamente con el móvil. Ponga un pie de foto si quiere.", ph_cap:"Pie de foto…", ph_del:"eliminar", wa_photos:"(+ PDF con fotos adjuntas — se acaba de descargar, adjúntelo aquí)",
   c_add:"Añadir", c_hint:"Toque un comentario para tacharlo — nada se borra, la cronología queda.", pdf_name:"Casa-Belfast-17-respuestas",
   i1h:"Paquete de luz indirecta", i1:"Bandas LED cálidas (2700 K) ocultas a lo largo de la viga y del canto de la galería, regulables con escenas — el ambiente de la opción B, en toda la casa.",
@@ -475,6 +561,13 @@ en: {
   livenote:"A living document: your answers and comments reach us directly via WhatsApp with one click.",
   ideas_h:"Ideas to add with a “+”", ideas_s:"Creative consulting: things that are far easier and cheaper NOW — scaffolding up, walls open — than later. Add whatever inspires you; we'll calculate it as an option.",
   t_idea:"Idea", add:"+ Add to my plan", added:"✓ Added",
+  w_start:"Start — 5 minutes", w_next:"Next", w_back:"Back", w_tosummary:"To summary", w_step:"Step", w_of:"of", n_send:"Send",
+  w_send_h:"Done! Review & send", w_send_s:"Here is your progress. You can return to any step — nothing gets lost. Sending creates a PDF with everything (answers, comments, photos) and opens WhatsApp.",
+  w_open:"open", w_none:"pending", w_ans:"answered", w_pdfmaking:"Creating PDF…", w_sent:"✓ Sent — thank you!",
+  n_tour:"3D tour", n_find:"Findings", n_damp:"Damp", n_roof:"Roof", n_stone:"Stone", n_stairs:"Stairs", n_ideas:"Ideas", n_extra:"Kitchen & bath", n_scope:"Checklist", n_photos:"Photos",
+  ph_s2:"Work through the list step by step — each item has its own button. Everything is stored on your device and goes into the PDF.",
+  pr1:"Lower wall lining up close (skirting area, transitions)", pr2:"Documents or invoices from the earlier renovation (photograph them)", pr3:"Kitchen ceiling cracks (close-up + overview)", pr4:"Cracks in other rooms (if any)", pr5:"Patio bathroom complete (ceiling, WC, walls)", pr6:"Damp or mould spots you notice", pr7:"Anything else you want to show us",
+  ph_take:"+ Upload photo", ph_none:"pending", ph_some:"photo(s)",
   ph_h:"Send us more details as photos", ph_s:"Cracks, old documents, corners that worry you: upload photos here. They are stored safely on your device and automatically included in the answers PDF created when you send.", ph_btn:"+ Upload photos", ph_hint:"You can also take the photo directly with your phone. Add a caption if you like.", ph_cap:"Caption…", ph_del:"remove", wa_photos:"(+ PDF with photos attached — it just downloaded, please attach it here)",
   c_add:"Add", c_hint:"Tap a comment to strike it through — nothing is deleted, the timeline stays.", pdf_name:"Casa-Belfast-17-answers",
   i1h:"Indirect lighting package", i1:"Warm hidden LED bands (2700 K) along the purlin and the gallery edge, dimmable with scenes — the option-B atmosphere, across the whole house.",
@@ -553,6 +646,13 @@ de: {
   livenote:"Ein lebendes Dokument: Ihre Antworten und Kommentare erreichen uns mit einem Klick per WhatsApp.",
   ideas_h:"Ideen zum Hinzufügen mit „+“", ideas_s:"Kreative Beratung: Dinge, die JETZT — Gerüst steht, Wände offen — viel einfacher und günstiger gehen als später. Fügen Sie hinzu, was Sie inspiriert; wir kalkulieren es als Option.",
   t_idea:"Idee", add:"+ Zu meinem Plan", added:"✓ Hinzugefügt",
+  w_start:"Los geht's — 5 Minuten", w_next:"Weiter", w_back:"Zurück", w_tosummary:"Zur Übersicht", w_step:"Schritt", w_of:"von", n_send:"Senden",
+  w_send_h:"Fertig! Prüfen & senden", w_send_s:"So steht Ihr Durchgang. Sie können zu jedem Schritt zurück — nichts geht verloren. Beim Senden entsteht ein PDF mit allem (Antworten, Kommentare, Fotos) und WhatsApp öffnet sich.",
+  w_open:"öffnen", w_none:"offen", w_ans:"beantwortet", w_pdfmaking:"PDF wird erstellt…", w_sent:"✓ Gesendet — danke!",
+  n_tour:"3D-Tour", n_find:"Befunde", n_damp:"Feuchte", n_roof:"Dach", n_stone:"Stein", n_stairs:"Treppe", n_ideas:"Ideen", n_extra:"Küche & Bad", n_scope:"Liste", n_photos:"Fotos",
+  ph_s2:"Arbeiten Sie die Liste Stück für Stück ab — jeder Punkt hat seinen eigenen Button. Alles wird auf Ihrem Gerät gespeichert und wandert ins PDF.",
+  pr1:"Untere Wandverkleidung aus der Nähe (Sockel, Übergänge)", pr2:"Unterlagen oder Rechnungen der früheren Sanierung (abfotografieren)", pr3:"Risse in der Küchendecke (nah + Übersicht)", pr4:"Risse in anderen Räumen (falls vorhanden)", pr5:"Patio-Bad komplett (Decke, WC, Wände)", pr6:"Feuchte- oder Schimmelstellen, die Ihnen auffallen", pr7:"Weitere Details, die Sie uns zeigen möchten",
+  ph_take:"+ Foto hochladen", ph_none:"offen", ph_some:"Foto(s)",
   ph_h:"Senden Sie uns weitere Details als Fotos", ph_s:"Risse, alte Unterlagen, Ecken, die Sie beschäftigen: Laden Sie hier Fotos hoch. Sie werden sicher auf Ihrem Gerät gespeichert und automatisch ins Antwort-PDF übernommen, das beim Senden entsteht.", ph_btn:"+ Fotos hochladen", ph_hint:"Sie können das Foto auch direkt mit dem Handy aufnehmen. Bildunterschrift optional.", ph_cap:"Bildunterschrift…", ph_del:"entfernen", wa_photos:"(+ PDF mit Fotos — gerade heruntergeladen, bitte hier anhängen)",
   c_add:"Hinzufügen", c_hint:"Kommentar antippen zum Durchstreichen — nichts wird gelöscht, die Chronologie bleibt.", pdf_name:"Casa-Belfast-17-Antworten",
   i1h:"Indirektes Licht-Paket", i1:"Warme verdeckte LED-Bänder (2700 K) entlang der Pfette und der Galeriekante, dimmbar mit Szenen — die Atmosphäre von Option B, im ganzen Haus.",
@@ -635,6 +735,8 @@ function applyLang() {
   document.documentElement.lang = S.lang;
   document.querySelectorAll('[data-i]').forEach(el => { const k = el.getAttribute('data-i'); if (t[k] !== undefined) el.textContent = t[k]; });
   document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b.dataset.lang === S.lang));
+  if (typeof renderPhotos === 'function') renderPhotos();
+  navState();
   updateCount();
 }
 document.querySelectorAll('.langs button').forEach(b => b.addEventListener('click', () => { S.lang = b.dataset.lang; localStorage.setItem('cb17_lang', S.lang); applyLang(); }));
@@ -669,6 +771,7 @@ const CKEYS = ['c_f1','c_f2','c_f3','c_f4','c_stone'];
 function updateCount() {
   const n = KEYS.filter(k => store(k).trim() !== '').length;
   document.getElementById('anscount').textContent = n;
+  navState();
 }
 function compile() {
   const t = I[S.lang];
@@ -696,18 +799,22 @@ function buildPdfDom(){
     a.forEach(e => { h += '<div style="' + (e.struck ? 'text-decoration:line-through;color:#999;' : '') + 'margin:2px 0"><span style="color:#777;font-size:10px">' + fmtT(e.t) + (e.struck && e.struckAt ? ' · ⊘ ' + fmtT(e.struckAt) : '') + '</span> — ' + String(e.text).replace(/</g,'&lt;') + '</div>'; });
     h += '</div>'; });
   if (PHOTOS.length) { h += '<div style="font-size:14px;font-weight:bold;margin:12px 0 6px;page-break-before:always">Fotos (' + PHOTOS.length + ')</div>';
-    PHOTOS.forEach(p => { h += '<div style="margin:8px 0;page-break-inside:avoid"><div style="font-size:10px;color:#777">' + fmtT(p.t) + (p.cap ? ' — ' + String(p.cap).replace(/</g,'&lt;') : '') + '</div><img src="' + p.data + '" style="max-width:174mm;max-height:120mm"></div>'; }); }
+    REQS.forEach(rk => { const mine = PHOTOS.filter(p => (p.req || 'pr7') === rk); if (!mine.length) return;
+      h += '<div style="font-size:12px;font-weight:bold;color:#a8763e;margin:10px 0 4px">' + t[rk] + '</div>';
+      mine.forEach(p => { h += '<div style="margin:8px 0;page-break-inside:avoid"><div style="font-size:10px;color:#777">' + fmtT(p.t) + (p.cap ? ' — ' + String(p.cap).replace(/</g,'&lt;') : '') + '</div><img src="' + p.data + '" style="max-width:174mm;max-height:120mm"></div>'; }); }); }
   w.innerHTML = h; return w;
 }
 document.getElementById('wabtn').addEventListener('click', async () => {
-  const t = I[S.lang];
+  const t = I[S.lang]; const btn = document.getElementById('wabtn');
   const fname = t.pdf_name + '-' + new Date().toISOString().slice(0,10) + '.pdf';
+  btn.disabled = true; const old = btn.textContent; btn.textContent = t.w_pdfmaking;
   try {
     if (window.html2pdf) {
       await html2pdf().set({margin:8, filename:fname, image:{type:'jpeg',quality:.92}, html2canvas:{scale:2}, jsPDF:{unit:'mm',format:'a4'}}).from(buildPdfDom()).save();
     }
   } catch(e) { console.warn('PDF export failed', e); }
   window.open('https://wa.me/491742010380?text=' + encodeURIComponent(compile()), '_blank');
+  btn.textContent = t.w_sent; setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 3000);
 });
 document.getElementById('copybtn').addEventListener('click', async () => {
   await navigator.clipboard.writeText(compile());
@@ -715,6 +822,73 @@ document.getElementById('copybtn').addEventListener('click', async () => {
   setTimeout(applyLang, 1200);
 });
 
+// wizard + sprungnavigation
+const NAV = [['tour','n_tour'],['findings','n_find'],['damp','n_damp'],['roof','n_roof'],['stone','n_stone'],['stairs','n_stairs'],['ideas','n_ideas'],['extra','n_extra'],['scope','n_scope'],['photos','n_photos'],['send','n_send']];
+const SECKEYS = {damp:['q1','q2','q3','q4'],roof:['q5','q6','q7'],stone:['q8','q8b','q9'],stairs:['q10','q11','q12'],ideas:['a1','a2','a3','a4','a5','a6'],extra:['q13','q14'],scope:['q15','q16','q17','q18','q19','q20']};
+const STEPS = ['hero'].concat(NAV.map(n => n[0]));
+document.body.classList.add('wizard');
+let STEP = Math.min(parseInt(localStorage.getItem('cb17_step') || '0', 10) || 0, STEPS.length - 1);
+function stepDone(id){
+  if (SECKEYS[id]) return SECKEYS[id].some(x => store(x).trim() !== '');
+  if (id === 'photos') return (typeof PHOTOS !== 'undefined') && PHOTOS.length > 0;
+  return false;
+}
+function showStep(i){
+  STEP = Math.max(0, Math.min(i, STEPS.length - 1));
+  localStorage.setItem('cb17_step', String(STEP));
+  const t = I[S.lang];
+  document.querySelectorAll('.hero, section').forEach(el => el.classList.remove('active'));
+  const id = STEPS[STEP];
+  const el = id === 'hero' ? document.querySelector('.hero') : document.getElementById(id);
+  el.classList.add('active');
+  const w = el.querySelector('.wrap'); if (w) w.classList.add('vis');
+  document.getElementById('wprog').style.width = Math.round(STEP / (STEPS.length - 1) * 100) + '%';
+  const onHero = id === 'hero', onSend = id === 'send';
+  document.getElementById('backbtn').style.display = onHero ? 'none' : '';
+  document.getElementById('backbtn').textContent = '‹ ' + t.w_back;
+  const next = document.getElementById('nextbtn');
+  next.style.display = onSend ? 'none' : '';
+  next.textContent = (STEPS[STEP + 1] === 'send' ? t.w_tosummary : t.w_next) + ' ›';
+  document.getElementById('wizstep').innerHTML = onHero || onSend ? '' : '<b>' + t.w_step + ' ' + STEP + ' ' + t.w_of + ' ' + (STEPS.length - 2) + '</b>';
+  document.getElementById('copybtn').style.display = onSend ? '' : 'none';
+  document.getElementById('wabtn').style.display = onSend ? '' : 'none';
+  document.getElementById('cntwrap').style.display = onSend ? '' : 'none';
+  if (onSend) renderSummary();
+  navState();
+  window.scrollTo({top: 0, behavior: 'instant'});
+}
+document.getElementById('nextbtn').addEventListener('click', () => showStep(STEP + 1));
+document.getElementById('backbtn').addEventListener('click', () => showStep(STEP - 1));
+document.getElementById('startbtn').addEventListener('click', () => showStep(1));
+function navState(){
+  const nav = document.getElementById('secnav');
+  if (!nav.childElementCount) {
+    NAV.forEach(([id]) => { const b = document.createElement('button'); b.dataset.sec = id;
+      b.addEventListener('click', () => showStep(STEPS.indexOf(id))); nav.appendChild(b); }); }
+  const t = I[S.lang];
+  [...nav.children].forEach(b => { const id = b.dataset.sec; const [,k] = NAV.find(n => n[0] === id);
+    b.textContent = t[k];
+    b.classList.toggle('done', stepDone(id));
+    b.style.borderColor = STEPS[STEP] === id ? 'var(--ochre)' : '';
+    b.style.color = STEPS[STEP] === id && !stepDone(id) ? 'var(--ochre2)' : '';
+  });
+  const act = nav.querySelector('[data-sec="' + STEPS[STEP] + '"]');
+  if (act) act.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
+}
+function renderSummary(){
+  const t = I[S.lang];
+  const list = document.getElementById('sumlist'); list.innerHTML = '';
+  NAV.forEach(([id, k]) => { if (id === 'send') return;
+    const d = document.createElement('div');
+    let status = '';
+    if (SECKEYS[id]) { const n = SECKEYS[id].filter(x => store(x).trim() !== '').length;
+      status = n ? ('✓ ' + n + ' ' + t.w_ans) : t.w_none; d.className = 'sumitem' + (n ? ' ok' : ''); }
+    else if (id === 'photos') { const n = PHOTOS.length; status = n ? ('✓ ' + n + ' ' + t.ph_some) : t.w_none; d.className = 'sumitem' + (n ? ' ok' : ''); }
+    else { d.className = 'sumitem ok'; status = '✓'; }
+    d.innerHTML = '<span class="st">' + t[k] + '</span><span class="ss">' + status + '</span><span class="go">' + t.w_open + ' ›</span>';
+    d.addEventListener('click', () => showStep(STEPS.indexOf(id)));
+    list.appendChild(d); });
+}
 // fotos (IndexedDB, verlustsicher auf dem Geraet)
 const idb = { db: null,
   open(){ return new Promise((res, rej) => { const r = indexedDB.open('cb17', 1);
@@ -729,20 +903,36 @@ function shrink(file){ return new Promise(res => { const img = new Image(); img.
   const M = 1200; let w = img.width, h = img.height; if (Math.max(w,h) > M) { const f = M/Math.max(w,h); w = Math.round(w*f); h = Math.round(h*f); }
   const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h);
   res(c.toDataURL('image/jpeg', .78)); }; img.src = URL.createObjectURL(file); }); }
-async function renderPhotos(){ const t = I[S.lang]; const g = document.getElementById('pgrid'); g.innerHTML = '';
-  PHOTOS.forEach(p => { const d = document.createElement('div'); d.className = 'pitem';
-    const im = document.createElement('img'); im.src = p.data;
-    const pt = document.createElement('div'); pt.className = 'pt'; pt.textContent = fmtT(p.t);
-    const cap = document.createElement('input'); cap.type = 'text'; cap.placeholder = t.ph_cap; cap.value = p.cap || '';
-    cap.addEventListener('change', async () => { p.cap = cap.value; await idb.put(p); });
-    const del = document.createElement('button'); del.className = 'pdel'; del.textContent = t.ph_del;
-    del.addEventListener('click', async () => { await idb.del(p.id); PHOTOS = PHOTOS.filter(x => x.id !== p.id); renderPhotos(); updateCount(); });
-    d.appendChild(im); d.appendChild(pt); d.appendChild(cap); d.appendChild(del); g.appendChild(d); }); }
+const REQS = ['pr1','pr2','pr3','pr4','pr5','pr6','pr7'];
+let UPREQ = 'pr7';
+async function renderPhotos(){ const t = I[S.lang]; const wrap = document.getElementById('reqs'); if (!wrap) return; wrap.innerHTML = '';
+  REQS.forEach(rk => { const mine = PHOTOS.filter(p => (p.req || 'pr7') === rk);
+    const d = document.createElement('div'); d.className = 'req' + (mine.length ? ' has' : '');
+    const head = document.createElement('div'); head.className = 'rhead';
+    const ti = document.createElement('div'); ti.className = 'rtitle'; ti.textContent = t[rk];
+    const badge = document.createElement('div'); badge.className = 'rbadge';
+    badge.textContent = mine.length ? ('✓ ' + mine.length + ' ' + t.ph_some) : t.ph_none;
+    head.appendChild(ti); head.appendChild(badge); d.appendChild(head);
+    const btn = document.createElement('button'); btn.className = 'chip rbtn'; btn.textContent = t.ph_take;
+    btn.addEventListener('click', () => { UPREQ = rk; document.getElementById('upinput').click(); });
+    d.appendChild(btn);
+    if (mine.length) { const g = document.createElement('div'); g.className = 'pgrid';
+      mine.forEach(p => { const pi = document.createElement('div'); pi.className = 'pitem';
+        const im = document.createElement('img'); im.src = p.data;
+        const pt = document.createElement('div'); pt.className = 'pt'; pt.textContent = fmtT(p.t);
+        const cap = document.createElement('input'); cap.type = 'text'; cap.placeholder = t.ph_cap; cap.value = p.cap || '';
+        cap.addEventListener('change', async () => { p.cap = cap.value; await idb.put(p); });
+        const del = document.createElement('button'); del.className = 'pdel'; del.textContent = t.ph_del;
+        del.addEventListener('click', async () => { await idb.del(p.id); PHOTOS = PHOTOS.filter(x => x.id !== p.id); renderPhotos(); updateCount(); });
+        pi.appendChild(im); pi.appendChild(pt); pi.appendChild(cap); pi.appendChild(del); g.appendChild(pi); });
+      d.appendChild(g); }
+    wrap.appendChild(d); });
+  navState();
+}
 idb.open().then(async () => { PHOTOS = await idb.all(); PHOTOS.sort((a,b) => a.t.localeCompare(b.t)); renderPhotos(); updateCount(); }).catch(e => console.warn('idb', e));
-document.getElementById('upzone').addEventListener('click', () => document.getElementById('upinput').click());
 document.getElementById('upinput').addEventListener('change', async ev => {
   for (const f of ev.target.files) { const data = await shrink(f);
-    const p = { id: Date.now() + '-' + Math.random().toString(36).slice(2,8), t: new Date().toISOString(), cap: '', data };
+    const p = { id: Date.now() + '-' + Math.random().toString(36).slice(2,8), t: new Date().toISOString(), cap: '', req: UPREQ, data };
     await idb.put(p); PHOTOS.push(p); }
   ev.target.value = ''; renderPhotos(); updateCount(); });
 
@@ -757,7 +947,6 @@ document.querySelectorAll('[data-cadd]').forEach(b => { const k = b.dataset.cadd
 document.querySelectorAll('.addbtn').forEach(b => {
   const k = b.dataset.add;
   const sync = () => { const on = store(k) === '1'; b.classList.toggle('on', on); b.querySelector('span').setAttribute('data-i', on ? 'added' : 'add'); };
-  if (store(k) === '1') b.classList.add('on');
   b.addEventListener('click', () => { save(k, store(k) === '1' ? '' : '1'); sync(); applyLang(); updateCount(); });
   sync();
 });
@@ -768,6 +957,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('vis')), 1200);
 
 applyLang();
+showStep(STEP);
 </script>
 </body>
 </html>
