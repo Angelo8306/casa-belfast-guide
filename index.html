@@ -295,8 +295,7 @@ body.wizard footer{display:none}
   <div class="callout" data-i="roof_call"></div>
   <div class="q" style="margin-top:22px"><div class="qt"><span class="qn">Q5</span><span data-i="q5"></span></div>
     <div class="chiprow" data-radio="q5">
-      <button class="chip" data-v="outside" data-i="opt_roof_out"></button>
-      <button class="chip" data-v="inside" data-i="opt_roof_in"></button>
+      <button class="chip" data-v="yes" data-i="opt_roof_yes"></button>
       <button class="chip" data-v="info" data-i="opt_roof_info"></button>
       <button class="chip" data-v="no" data-i="opt_no"></button>
     </div></div>
@@ -513,9 +512,9 @@ es: {
   q3:"¿Tiene información o documentos sobre el curso de agua? ¿La humedad es constante o aumenta tras la lluvia?",
   q4:"¿Se hizo en el pasado algún tratamiento contra la humedad (inyecciones, drenaje, ventilación)?",
   roof_h:"Nuestra recomendación: aislar la cubierta ahora", roof_s:"La cubierta no tiene aislamiento y el calor sube: en invierno se escapa por el tejado (calefacción cara), en verano entra. El momento ideal es ahora — con los trabajos de vigas en marcha, medios montados y la casa vacía. Ya viviendo dentro, sería mucho más molesto y caro.",
-  roof_call:"Dos vías: por el EXTERIOR (conserva el precioso techo de madera visto — ideal junto a la reparación de la cubierta) o por el INTERIOR (más económico, oculta parte del techo de madera).",
-  q5:"¿Incluimos el aislamiento de la cubierta como opción calculada?",
-  opt_roof_out:"Sí — por el exterior", opt_roof_in:"Sí — por el interior", opt_roof_info:"Cuéntenme más", opt_no:"No",
+  roof_call:"Nuestra promesa: nada de sobredimensionar. Solo le propondremos el aislamiento en la variante que el informe estructural realmente permita — con costes y ahorro estimado, para decidir con calma.",
+  q5:"¿Quiere que, tras el informe estructural, le presentemos la variante de aislamiento viable con cifras?",
+  opt_roof_yes:"Sí, preséntenmela", opt_roof_info:"Cuéntenme más", opt_no:"No",
   q6:"Los refuerzos metálicos existentes en las vigas: ¿cuándo y quién los ejecutó? ¿Hay documentación?",
   q7:"¿De acuerdo en que un ingeniero estructural revise primero todas las vigas y apoyos, y después fijemos el alcance definitivo?",
   opt_yes:"Sí, de acuerdo", opt_talk:"Hablémoslo",
@@ -598,9 +597,9 @@ en: {
   q3:"Any information or documents about the watercourse? Is the damp constant, or worse after rain?",
   q4:"Were any damp treatments done in the past (injections, drainage, ventilation)?",
   roof_h:"Our recommendation: insulate the roof now", roof_s:"The roof is uninsulated and heat rises: in winter it escapes through the roof (expensive heating), in summer it pours in. The ideal moment is now — beam works running, access equipment in place, house empty. Once you live inside, it gets far more disruptive and costly.",
-  roof_call:"Two routes: from OUTSIDE (preserves the beautiful visible timber ceiling — ideal together with the roof repairs) or from INSIDE (cheaper, hides part of the timber ceiling).",
-  q5:"Shall we include roof insulation as a calculated option?",
-  opt_roof_out:"Yes — from outside", opt_roof_in:"Yes — from inside", opt_roof_info:"Tell me more", opt_no:"No",
+  roof_call:"Our promise: no overengineering. We will only propose insulation in the variant the structural survey actually allows — with costs and estimated savings, so you can decide calmly.",
+  q5:"After the structural survey, shall we present the viable insulation option with numbers?",
+  opt_roof_yes:"Yes, present it", opt_roof_info:"Tell me more", opt_no:"No",
   q6:"The existing steel reinforcements on the beams: when and by whom? Any documentation?",
   q7:"Happy for a structural engineer to check all beams and bearings first, and to fix the final scope after that?",
   opt_yes:"Yes, agreed", opt_talk:"Let's discuss",
@@ -683,9 +682,9 @@ de: {
   q3:"Gibt es Informationen oder Unterlagen zum Wasserlauf? Ist die Feuchte konstant oder nach Regen stärker?",
   q4:"Gab es früher Feuchte-Maßnahmen (Injektionen, Drainage, Lüftung)?",
   roof_h:"Unsere Empfehlung: das Dach jetzt dämmen", roof_s:"Das Dach ist ungedämmt, Wärme steigt nach oben: Im Winter entweicht sie durchs Dach (teure Heizung), im Sommer kommt sie herein. Der ideale Moment ist jetzt — Balkenarbeiten laufen, Gerüst steht, Haus leer. Im bewohnten Zustand wird es deutlich aufwendiger und teurer.",
-  roof_call:"Zwei Wege: von AUSSEN (erhält die schöne sichtbare Holzdecke — ideal zusammen mit den Dacharbeiten) oder von INNEN (günstiger, verdeckt einen Teil der Holzdecke).",
-  q5:"Sollen wir die Dachdämmung als kalkulierte Option aufnehmen?",
-  opt_roof_out:"Ja — von außen", opt_roof_in:"Ja — von innen", opt_roof_info:"Erzählen Sie mir mehr", opt_no:"Nein",
+  roof_call:"Unser Versprechen: kein Überdimensionieren. Wir schlagen die Dämmung nur in der Variante vor, die der Statik-Befund wirklich zulässt — mit Kosten und geschätzter Ersparnis, damit Sie in Ruhe entscheiden können.",
+  q5:"Sollen wir Ihnen nach der Statik-Prüfung die machbare Dämm-Variante mit Zahlen vorlegen?",
+  opt_roof_yes:"Ja, bitte vorlegen", opt_roof_info:"Erzählen Sie mir mehr", opt_no:"Nein",
   q6:"Die vorhandenen Stahl-Verstärkungen an den Balken: wann und von wem? Gibt es Unterlagen?",
   q7:"Einverstanden, dass zuerst ein Statiker alle Balken und Auflager prüft und der finale Umfang danach festgelegt wird?",
   opt_yes:"Ja, einverstanden", opt_talk:"Lassen Sie uns sprechen",
@@ -827,7 +826,8 @@ const NAV = [['tour','n_tour'],['findings','n_find'],['damp','n_damp'],['roof','
 const SECKEYS = {damp:['q1','q2','q3','q4'],roof:['q5','q6','q7'],stone:['q8','q8b','q9'],stairs:['q10','q11','q12'],ideas:['a1','a2','a3','a4','a5','a6'],extra:['q13','q14'],scope:['q15','q16','q17','q18','q19','q20']};
 const STEPS = ['hero'].concat(NAV.map(n => n[0]));
 document.body.classList.add('wizard');
-let STEP = Math.min(parseInt(localStorage.getItem('cb17_step') || '0', 10) || 0, STEPS.length - 1);
+const _urlStep = new URLSearchParams(location.search).get('step');
+let STEP = Math.min(_urlStep !== null ? parseInt(_urlStep, 10) || 0 : (parseInt(localStorage.getItem('cb17_step') || '0', 10) || 0), STEPS.length - 1);
 function stepDone(id){
   if (SECKEYS[id]) return SECKEYS[id].some(x => store(x).trim() !== '');
   if (id === 'photos') return (typeof PHOTOS !== 'undefined') && PHOTOS.length > 0;
