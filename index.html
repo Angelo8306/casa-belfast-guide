@@ -597,6 +597,7 @@ document.getElementById('copybtn').addEventListener('click', async () => {
 // reveal on scroll
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }), { threshold: .08 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('vis')), 1200);
 
 applyLang();
 </script>
