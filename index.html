@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Casa Belfast 17 · Renovation Guide</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -104,11 +105,28 @@ textarea:focus,input:focus{outline:none;border-color:var(--ochre)}
   cursor:pointer;margin-top:10px;text-decoration:underline;text-underline-offset:3px}
 .cbox{margin-top:10px;display:none}
 .cbox.open{display:block}
+/* kommentar-chronologie */
+.centry{display:flex;gap:10px;align-items:flex-start;background:var(--sand2);border-radius:8px;padding:8px 12px;margin-bottom:6px;font-size:.88rem;cursor:pointer}
+.centry .ct{color:var(--ink2);font-size:.7rem;white-space:nowrap;margin-top:3px;font-weight:700}
+.centry.struck .cx{text-decoration:line-through;opacity:.5}
+.chint{font-size:.72rem;color:var(--ink2);font-style:italic;margin-top:6px}
+.crow{display:flex;gap:8px;margin-top:8px;align-items:flex-start}
+.crow textarea{flex:1;min-height:42px}
 /* checklist */
 .check{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-bottom:22px}
 .citem{display:flex;gap:10px;align-items:center;background:var(--white);border:1.5px solid var(--line);
   border-radius:10px;padding:10px 14px;font-size:.9rem}
 .citem .ic{color:var(--ok);font-weight:700}
+/* fotos */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
+.pitem{background:var(--white);border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+.pitem img{width:100%;height:110px;object-fit:cover;display:block}
+.pitem .pt{font-size:.66rem;color:var(--ink2);padding:4px 8px 0;font-weight:700}
+.pitem input{border:none;background:transparent;font-size:.78rem;padding:4px 8px 8px;min-height:auto}
+.pitem .pdel{background:none;border:none;color:var(--warn);font-size:.7rem;font-weight:700;cursor:pointer;padding:0 8px 8px;text-decoration:underline}
+.upzone{border:2px dashed var(--ochre);border-radius:14px;padding:26px;text-align:center;cursor:pointer;background:var(--white);transition:.15s}
+.upzone:hover{background:var(--sand2)}
+.upzone .big{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--ochre2)}
 /* sendbar */
 .sendbar{position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--ink);color:var(--sand)}
 .sendbar .wrap{display:flex;align-items:center;gap:14px;padding:12px 22px;flex-wrap:wrap}
@@ -155,19 +173,19 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
   <div class="grid">
     <div class="card"><img src="assets/stein_ist.jpg" alt=""><div class="pad">
       <span class="tag crit" data-i="t_crit"></span><h3 data-i="f1h"></h3><p data-i="f1"></p>
-      <button class="comment-btn" data-c="c_f1" data-i="addc"></button><div class="cbox" id="c_f1"><textarea data-store="c_f1"></textarea></div>
+      <button class="comment-btn" data-c="c_f1" data-i="addc"></button><div class="cbox" id="c_f1"><div class="clog" data-log="c_f1"></div><div class="crow"><textarea data-cin="c_f1"></textarea><button class="chip" data-cadd="c_f1"><span data-i="c_add"></span></button></div><div class="chint" data-i="c_hint"></div></div>
     </div></div>
     <div class="card"><img src="assets/treppe_ist.jpg" alt=""><div class="pad">
       <span class="tag crit" data-i="t_crit"></span><h3 data-i="f2h"></h3><p data-i="f2"></p>
-      <button class="comment-btn" data-c="c_f2" data-i="addc"></button><div class="cbox" id="c_f2"><textarea data-store="c_f2"></textarea></div>
+      <button class="comment-btn" data-c="c_f2" data-i="addc"></button><div class="cbox" id="c_f2"><div class="clog" data-log="c_f2"></div><div class="crow"><textarea data-cin="c_f2"></textarea><button class="chip" data-cadd="c_f2"><span data-i="c_add"></span></button></div><div class="chint" data-i="c_hint"></div></div>
     </div></div>
     <div class="card"><img src="assets/kueche_decke.jpg" alt=""><div class="pad">
       <span class="tag" data-i="t_new"></span><h3 data-i="f3h"></h3><p data-i="f3"></p>
-      <button class="comment-btn" data-c="c_f3" data-i="addc"></button><div class="cbox" id="c_f3"><textarea data-store="c_f3"></textarea></div>
+      <button class="comment-btn" data-c="c_f3" data-i="addc"></button><div class="cbox" id="c_f3"><div class="clog" data-log="c_f3"></div><div class="crow"><textarea data-cin="c_f3"></textarea><button class="chip" data-cadd="c_f3"><span data-i="c_add"></span></button></div><div class="chint" data-i="c_hint"></div></div>
     </div></div>
     <div class="card"><img src="assets/bad_schaden.jpg" alt=""><div class="pad">
       <span class="tag" data-i="t_new"></span><h3 data-i="f4h"></h3><p data-i="f4"></p>
-      <button class="comment-btn" data-c="c_f4" data-i="addc"></button><div class="cbox" id="c_f4"><textarea data-store="c_f4"></textarea></div>
+      <button class="comment-btn" data-c="c_f4" data-i="addc"></button><div class="cbox" id="c_f4"><div class="clog" data-log="c_f4"></div><div class="crow"><textarea data-cin="c_f4"></textarea><button class="chip" data-cadd="c_f4"><span data-i="c_add"></span></button></div><div class="chint" data-i="c_hint"></div></div>
     </div></div>
   </div>
 </div></section>
@@ -186,6 +204,7 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
       <div class="step"><span class="n"></span><p data-i="dp2"></p></div>
       <div class="step"><span class="n"></span><p data-i="dp3"></p></div>
       <div class="step"><span class="n"></span><p data-i="dp4"></p></div>
+      <div class="callout" data-i="dry_call"></div>
     </div>
   </div>
   <div class="q" style="margin-top:26px">
@@ -239,10 +258,11 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
   <p class="imgnote" data-i="viznote"></p>
   <div class="q" style="margin-top:18px"><div class="qt"><span class="qn">Q9</span><span data-i="q9"></span></div>
     <div class="chiprow" data-radio="q9">
+      <button class="chip" data-v="later" data-i="opt_later"></button>
       <button class="chip" data-v="white" data-i="opt_white"></button>
       <button class="chip" data-v="natural" data-i="opt_natural"></button>
     </div></div>
-  <button class="comment-btn" data-c="c_stone" data-i="addc"></button><div class="cbox" id="c_stone"><textarea data-store="c_stone"></textarea></div>
+  <button class="comment-btn" data-c="c_stone" data-i="addc"></button><div class="cbox" id="c_stone"><div class="clog" data-log="c_stone"></div><div class="crow"><textarea data-cin="c_stone"></textarea><button class="chip" data-cadd="c_stone"><span data-i="c_add"></span></button></div><div class="chint" data-i="c_hint"></div></div>
 </div></section>
 
 <section id="stairs"><div class="wrap reveal">
@@ -267,8 +287,29 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
     </div></div>
 </div></section>
 
-<section id="extra"><div class="wrap reveal">
+
+<section id="ideas"><div class="wrap reveal">
   <div class="snum">07</div>
+  <h2 data-i="ideas_h"></h2>
+  <p class="sub" data-i="ideas_s"></p>
+  <div class="grid">
+    <div class="card"><div class="pad"><span class="tag" data-i="t_idea"></span><h3 data-i="i1h"></h3><p data-i="i1"></p>
+      <button class="chip addbtn" data-add="a1" style="margin-top:auto"><span data-i="add"></span></button></div></div>
+    <div class="card"><div class="pad"><span class="tag" data-i="t_idea"></span><h3 data-i="i2h"></h3><p data-i="i2"></p>
+      <button class="chip addbtn" data-add="a2" style="margin-top:auto"><span data-i="add"></span></button></div></div>
+    <div class="card"><div class="pad"><span class="tag" data-i="t_idea"></span><h3 data-i="i3h"></h3><p data-i="i3"></p>
+      <button class="chip addbtn" data-add="a3" style="margin-top:auto"><span data-i="add"></span></button></div></div>
+    <div class="card"><div class="pad"><span class="tag" data-i="t_idea"></span><h3 data-i="i4h"></h3><p data-i="i4"></p>
+      <button class="chip addbtn" data-add="a4" style="margin-top:auto"><span data-i="add"></span></button></div></div>
+    <div class="card"><div class="pad"><span class="tag" data-i="t_idea"></span><h3 data-i="i5h"></h3><p data-i="i5"></p>
+      <button class="chip addbtn" data-add="a5" style="margin-top:auto"><span data-i="add"></span></button></div></div>
+    <div class="card"><div class="pad"><span class="tag" data-i="t_idea"></span><h3 data-i="i6h"></h3><p data-i="i6"></p>
+      <button class="chip addbtn" data-add="a6" style="margin-top:auto"><span data-i="add"></span></button></div></div>
+  </div>
+</div></section>
+
+<section id="extra"><div class="wrap reveal">
+  <div class="snum">08</div>
   <h2 data-i="extra_h"></h2>
   <p class="sub" data-i="extra_s"></p>
   <div class="grid">
@@ -289,7 +330,7 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
 </div></section>
 
 <section id="scope"><div class="wrap reveal">
-  <div class="snum">08</div>
+  <div class="snum">09</div>
   <h2 data-i="scope_h"></h2>
   <p class="sub" data-i="scope_s"></p>
   <div class="check">
@@ -325,6 +366,15 @@ footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
     </div></div>
 </div></section>
 
+<section id="photos"><div class="wrap reveal">
+  <div class="snum">10</div>
+  <h2 data-i="ph_h"></h2>
+  <p class="sub" data-i="ph_s"></p>
+  <div class="upzone" id="upzone"><div class="big" data-i="ph_btn"></div><div style="font-size:.82rem;color:var(--ink2);margin-top:4px" data-i="ph_hint"></div></div>
+  <input type="file" id="upinput" accept="image/*" multiple style="display:none">
+  <div class="pgrid" id="pgrid"></div>
+</div></section>
+
 <footer><div class="wrap">
   <p data-i="foot1"></p>
   <p style="margin-top:6px" data-i="foot2"></p>
@@ -343,6 +393,16 @@ es: {
   h1a:"Su casa, entendida", h1b:"antes de reformarla.",
   lede:"Hemos escaneado la vivienda en 3D y analizado estructura, humedades y superficies. Esta guía interactiva le explica lo que vimos, le muestra opciones — y recoge sus respuestas y comentarios para preparar un presupuesto que acierte exactamente.",
   livenote:"Documento vivo: sus respuestas y comentarios nos llegan directamente por WhatsApp con un clic.",
+  ideas_h:"Ideas para añadir con un “+”", ideas_s:"Asesoramiento creativo: cosas que ahora — con andamios montados y paredes abiertas — salen mucho mejor y más baratas que después. Añada lo que le inspire; lo calculamos como opción.",
+  t_idea:"Idea", add:"+ Añadir a mi plan", added:"✓ Añadido",
+  ph_h:"Envíenos más detalles en fotos", ph_s:"Grietas, documentos antiguos, rincones que le preocupan: suba fotos aquí. Se guardan de forma segura en su dispositivo y se incluyen automáticamente en el PDF de respuestas que se crea al enviar.", ph_btn:"+ Subir fotos", ph_hint:"También puede hacer la foto directamente con el móvil. Ponga un pie de foto si quiere.", ph_cap:"Pie de foto…", ph_del:"eliminar", wa_photos:"(+ PDF con fotos adjuntas — se acaba de descargar, adjúntelo aquí)",
+  c_add:"Añadir", c_hint:"Toque un comentario para tacharlo — nada se borra, la cronología queda.", pdf_name:"Casa-Belfast-17-respuestas",
+  i1h:"Paquete de luz indirecta", i1:"Bandas LED cálidas (2700 K) ocultas a lo largo de la viga y del canto de la galería, regulables con escenas — el ambiente de la opción B, en toda la casa.",
+  i2h:"Pasamanos con línea de luz", i2:"LED integrado en el pasamanos de la nueva escalera: orientación nocturna elegante y segura.",
+  i3h:"Calor para febrero", i3:"Bombas de calor split eficientes (calientan en invierno, refrescan en verano), dimensionadas según la decisión de aislamiento; opcional suelo templado eléctrico en el baño.",
+  i4h:"Clima sano permanente", i4:"Ventilación controlada con deshumidificación suave: aire fresco constante que además mantiene secas las paredes recién saneadas.",
+  i5h:"Patio como habitación extra", i5:"Pérgola bioclimática y cocina exterior alrededor de la barbacoa existente: el patio se convierte en su segundo salón, 9 meses al año.",
+  i6h:"Base smart home", i6:"Escenas de luz, presencia y persianas: el cableado se hace AHORA con las paredes abiertas — después sería caro.",
   opentour:"Abrir el recorrido 3D en pantalla completa ↗",
   tour_h:"Recorra su casa en 3D", tour_s:"Todo lo que comentamos aquí puede verlo usted misma en el recorrido — cada medida sale de este escaneo (precisión ±2 %).",
   find_h:"Qué hemos visto", find_s:"Cuatro temas principales — dos ya conocidos de nuestra visita y dos que hemos detectado además en el escaneo. Puede comentar cada punto.",
@@ -376,7 +436,9 @@ es: {
   stone_a_t:"Piedra restaurada", sa1:"Rejuntado con mortero de cal, piedra vista", sa2:"Transpirable: lo ideal frente a la humedad", sa3:"Carácter y autenticidad",
   stone_b_t:"Trasdosado blanco ventilado + LED", sb1:"Superficie serena y moderna, luz cálida indirecta", sb2:"Sistema VENTILADO con rejillas — la pared respira", sb3:"Solo tras tratar la causa; apoyos de viga registrables",
   opt_mix:"Me interesa una combinación de A y B",
-  q9:"Si elige A: ¿acabado encalado blanco como ahora, o piedra en tono natural?",
+  q9:"Si elige A — el acabado (encalado blanco o piedra natural) se decide mejor DESPUÉS del secado y de una limpieza de prueba: solo entonces se ve cómo luce la piedra de verdad, y encalar después siempre es posible y barato. ¿Hacia dónde se inclina hoy?",
+  opt_later:"Decidir tras las muestras (recomendado)",
+  dry_call:"Importante saberlo: su muro de piedra de 50–60 cm ha almacenado agua durante años. Tras la barrera, la regla práctica es ~1 mes de secado por cada cm de espesor — la mayor parte ocurre en el primer y segundo año, y el clima de Alicante ayuda. Mientras seca, las sales salen a la superficie: un revoco de cal «de sacrificio» las captura y se renueva una o dos veces, como un apósito que se cambia. Para su piedra caliza quedan prohibidos el chorro de arena, la alta presión y los ácidos — se limpia con suavidad. Por eso el acabado final se elige más adelante, con muestras reales.",
   opt_white:"Encalado blanco", opt_natural:"Tono natural",
   viznote:"Imágenes: visualizaciones IA sobre su escaneo real — previsualización de diseño, no plano de ejecución.",
   stairs_h:"La escalera: ¿qué dirección le gusta?", stairs_s:"Segura y conforme a normativa — sin renunciar al almacenaje.",
@@ -391,6 +453,7 @@ es: {
   opt_renovate:"Renovarlo bien", opt_repair:"Solo sanear/impermeabilizar", opt_advise:"Aconséjenme",
   scope_h:"¿Está todo? Compruébelo", scope_s:"Esto es lo que ya está recogido en el plan. Si falta algo — dígalo aquí y entra directamente.",
   ck1:"Diagnóstico de humedad + catas", ck2:"Revisión estructural de todas las vigas", ck3:"Refuerzo de viga rota y zona con pandeo", ck4:"Restauración/acabado de muros de piedra (A/B)", ck5:"Barrera contra humedad ascendente", ck6:"Sellado del desagüe", ck7:"Montaje de extractores de chimenea", ck8:"Escalera nueva conforme a norma (A/B)", ck9:"Fisuras techo cocina", ck10:"Baño exterior del patio",
+  q8:"Muros de piedra — dirección elegida", q8b:"Muros — combinación", q10:"Escalera — dirección elegida", q13:"Fisuras techo cocina — sus indicaciones", q14:"Baño del patio — su decisión",
   q15:"¿Falta algo en esta lista? ¿Qué más le preocupa o le gustaría incluir?",
   q16:"A partir de mediados de septiembre: ¿quién puede darnos acceso a la vivienda?",
   q17:"¿Le parece bien que nuestro abogado presente la comunicación administrativa por usted (poder sencillo por firma electrónica)?",
@@ -408,6 +471,16 @@ en: {
   h1a:"Your house, understood", h1b:"before it's renovated.",
   lede:"We scanned the home in 3D and analysed structure, humidity and surfaces. This interactive guide explains what we saw, shows you options — and collects your answers and comments so the final quotation hits exactly right.",
   livenote:"A living document: your answers and comments reach us directly via WhatsApp with one click.",
+  ideas_h:"Ideas to add with a “+”", ideas_s:"Creative consulting: things that are far easier and cheaper NOW — scaffolding up, walls open — than later. Add whatever inspires you; we'll calculate it as an option.",
+  t_idea:"Idea", add:"+ Add to my plan", added:"✓ Added",
+  ph_h:"Send us more details as photos", ph_s:"Cracks, old documents, corners that worry you: upload photos here. They are stored safely on your device and automatically included in the answers PDF created when you send.", ph_btn:"+ Upload photos", ph_hint:"You can also take the photo directly with your phone. Add a caption if you like.", ph_cap:"Caption…", ph_del:"remove", wa_photos:"(+ PDF with photos attached — it just downloaded, please attach it here)",
+  c_add:"Add", c_hint:"Tap a comment to strike it through — nothing is deleted, the timeline stays.", pdf_name:"Casa-Belfast-17-answers",
+  i1h:"Indirect lighting package", i1:"Warm hidden LED bands (2700 K) along the purlin and the gallery edge, dimmable with scenes — the option-B atmosphere, across the whole house.",
+  i2h:"Handrail light line", i2:"LED integrated into the new staircase handrail: elegant, safe night-time orientation.",
+  i3h:"Warmth for February", i3:"Efficient heat-pump splits (heat in winter, cool in summer), sized after the insulation decision; optional electric floor tempering in the bathroom.",
+  i4h:"Permanently healthy climate", i4:"Controlled ventilation with gentle dehumidification: constant fresh air that also keeps your freshly restored walls dry.",
+  i5h:"The patio as an extra room", i5:"Bioclimatic pergola and an outdoor kitchen around the existing BBQ: the patio becomes your second living room, 9 months a year.",
+  i6h:"Smart home basics", i6:"Light scenes, presence, blinds: the wiring happens NOW while walls are open — later it gets expensive.",
   opentour:"Open the 3D tour full screen ↗",
   tour_h:"Walk through your house in 3D", tour_s:"Everything we discuss here you can verify yourself in the tour — every measurement comes from this scan (±2 % accuracy).",
   find_h:"What we saw", find_s:"Four main topics — two known from our visit, two additionally detected in the scan. You can comment on each.",
@@ -441,7 +514,9 @@ en: {
   stone_a_t:"Restored natural stone", sa1:"Lime-mortar repointing, stone stays visible", sa2:"Breathable — ideal against the damp", sa3:"Character and authenticity",
   stone_b_t:"White ventilated cladding + LED", sb1:"Calm modern surface, warm indirect light", sb2:"VENTILATED system with grilles — the wall keeps breathing", sb3:"Only after treating the cause; beam bearings stay inspectable",
   opt_mix:"I'm interested in a mix of A and B",
-  q9:"If A: whitewashed as today, or natural stone tone?",
+  q9:"If A — the finish (whitewash or natural stone) is best decided AFTER drying and a cleaning test: only then can you see how the stone truly looks, and lime-washing later is always possible and cheap. Which way do you lean today?",
+  opt_later:"Decide after sample areas (recommended)",
+  dry_call:"Good to know: your 50–60 cm stone wall has stored water for years. After the barrier, the rule of thumb is ~1 month of drying per cm of thickness — most happens in the first year or two, and the Alicante climate helps. As it dries, salts travel to the surface: a 'sacrificial' lime plaster catches them and is renewed once or twice, like changing a dressing. Sandblasting, high pressure and acids are off-limits for your limestone — cleaning is done gently. That's why the final finish is chosen later, from real sample areas.",
   opt_white:"Whitewashed", opt_natural:"Natural tone",
   viznote:"Images: AI visualizations based on your real scan — a design preview, not a construction drawing.",
   stairs_h:"The staircase: which direction do you like?", stairs_s:"Safe and code-compliant — without giving up the storage.",
@@ -456,6 +531,7 @@ en: {
   opt_renovate:"Renovate properly", opt_repair:"Just repair/seal", opt_advise:"Advise me",
   scope_h:"Is everything covered? Check it", scope_s:"This is what the plan already includes. If anything's missing — say it here and it goes straight in.",
   ck1:"Damp diagnosis + inspection openings", ck2:"Structural check of all beams", ck3:"Reinforcing broken beam & sagging section", ck4:"Stone wall restoration/finish (A/B)", ck5:"Barrier against rising damp", ck6:"Drain re-sealing", ck7:"Chimney extraction fans installation", ck8:"New code-compliant staircase (A/B)", ck9:"Kitchen ceiling cracks", ck10:"Patio bathroom",
+  q8:"Stone walls — chosen direction", q8b:"Walls — combination", q10:"Staircase — chosen direction", q13:"Kitchen ceiling cracks — your notes", q14:"Patio bathroom — your decision",
   q15:"Is anything missing from this list? What else concerns you or should be included?",
   q16:"From mid-September: who can give us access to the house?",
   q17:"Happy for our lawyer to file the administrative notification for you (simple e-signature power of attorney)?",
@@ -473,6 +549,16 @@ de: {
   h1a:"Ihr Haus, verstanden —", h1b:"bevor saniert wird.",
   lede:"Wir haben das Haus in 3D gescannt und Statik, Feuchtigkeit und Oberflächen analysiert. Dieser interaktive Guide erklärt, was wir gesehen haben, zeigt Optionen — und sammelt Ihre Antworten und Kommentare, damit das finale Angebot exakt trifft.",
   livenote:"Ein lebendes Dokument: Ihre Antworten und Kommentare erreichen uns mit einem Klick per WhatsApp.",
+  ideas_h:"Ideen zum Hinzufügen mit „+“", ideas_s:"Kreative Beratung: Dinge, die JETZT — Gerüst steht, Wände offen — viel einfacher und günstiger gehen als später. Fügen Sie hinzu, was Sie inspiriert; wir kalkulieren es als Option.",
+  t_idea:"Idee", add:"+ Zu meinem Plan", added:"✓ Hinzugefügt",
+  ph_h:"Senden Sie uns weitere Details als Fotos", ph_s:"Risse, alte Unterlagen, Ecken, die Sie beschäftigen: Laden Sie hier Fotos hoch. Sie werden sicher auf Ihrem Gerät gespeichert und automatisch ins Antwort-PDF übernommen, das beim Senden entsteht.", ph_btn:"+ Fotos hochladen", ph_hint:"Sie können das Foto auch direkt mit dem Handy aufnehmen. Bildunterschrift optional.", ph_cap:"Bildunterschrift…", ph_del:"entfernen", wa_photos:"(+ PDF mit Fotos — gerade heruntergeladen, bitte hier anhängen)",
+  c_add:"Hinzufügen", c_hint:"Kommentar antippen zum Durchstreichen — nichts wird gelöscht, die Chronologie bleibt.", pdf_name:"Casa-Belfast-17-Antworten",
+  i1h:"Indirektes Licht-Paket", i1:"Warme verdeckte LED-Bänder (2700 K) entlang der Pfette und der Galeriekante, dimmbar mit Szenen — die Atmosphäre von Option B, im ganzen Haus.",
+  i2h:"Handlauf mit Lichtlinie", i2:"LED im Handlauf der neuen Treppe integriert: elegante, sichere Orientierung bei Nacht.",
+  i3h:"Wärme für den Februar", i3:"Effiziente Wärmepumpen-Splits (heizen im Winter, kühlen im Sommer), dimensioniert nach der Dämm-Entscheidung; optional elektrische Fußboden-Temperierung im Bad.",
+  i4h:"Dauerhaft gesundes Klima", i4:"Kontrollierte Lüftung mit sanfter Entfeuchtung: konstant frische Luft, die zugleich die frisch sanierten Wände trocken hält.",
+  i5h:"Der Patio als Zusatzzimmer", i5:"Bioklimatische Pergola und Outdoor-Küche um den bestehenden Grill: Der Patio wird Ihr zweites Wohnzimmer — 9 Monate im Jahr.",
+  i6h:"Smart-Home-Basis", i6:"Lichtszenen, Präsenz, Rollos: Die Verkabelung passiert JETZT bei offenen Wänden — später wird es teuer.",
   opentour:"3D-Rundgang im Vollbild öffnen ↗",
   tour_h:"Gehen Sie in 3D durch Ihr Haus", tour_s:"Alles, was wir hier besprechen, können Sie selbst im Rundgang prüfen — jedes Maß stammt aus diesem Scan (±2 % Genauigkeit).",
   find_h:"Was wir gesehen haben", find_s:"Vier Hauptthemen — zwei aus unserem Termin bekannt, zwei zusätzlich im Scan entdeckt. Jeder Punkt ist kommentierbar.",
@@ -506,7 +592,9 @@ de: {
   stone_a_t:"Restaurierter Naturstein", sa1:"Kalkmörtel-Neuverfugung, Stein bleibt sichtbar", sa2:"Atmungsaktiv — ideal bei Feuchtigkeit", sa3:"Charakter und Authentizität",
   stone_b_t:"Weiße hinterlüftete Verkleidung + LED", sb1:"Ruhige moderne Fläche, warmes indirektes Licht", sb2:"HINTERLÜFTETES System mit Gittern — die Wand atmet", sb3:"Erst nach Ursachenbehandlung; Balkenauflager bleiben prüfbar",
   opt_mix:"Mich interessiert eine Kombination aus A und B",
-  q9:"Falls A: kalkweiß wie heute, oder Naturstein-Ton?",
+  q9:"Falls A — das Finish (kalkweiß oder Naturstein) entscheidet man am besten NACH Trocknung und Probereinigung: Erst dann sieht man, wie der Stein wirklich aussieht, und Weißkalken geht später jederzeit günstig. Wohin tendieren Sie heute?",
+  opt_later:"Nach Musterflächen entscheiden (empfohlen)",
+  dry_call:"Gut zu wissen: Ihre 50–60 cm dicke Steinwand hat über Jahre Wasser gespeichert. Nach der Sperre gilt die Faustregel ~1 Monat Trocknung pro cm Wanddicke — das meiste passiert im ersten und zweiten Jahr, das Klima in Alicante hilft. Beim Trocknen wandern Salze an die Oberfläche: Ein „Opfer“-Kalkputz fängt sie auf und wird ein- bis zweimal erneuert, wie ein Pflaster, das man wechselt. Sandstrahlen, Hochdruck und Säure sind für Ihren Kalkstein tabu — gereinigt wird sanft. Darum wählt man das finale Finish später, an echten Musterflächen.",
   opt_white:"Kalkweiß", opt_natural:"Naturton",
   viznote:"Bilder: KI-Visualisierungen auf Basis Ihres echten Scans — Design-Vorschau, kein Ausführungsplan.",
   stairs_h:"Die Treppe: Welche Richtung gefällt Ihnen?", stairs_s:"Sicher und normgerecht — ohne den Stauraum aufzugeben.",
@@ -521,6 +609,7 @@ de: {
   opt_renovate:"Richtig renovieren", opt_repair:"Nur sanieren/abdichten", opt_advise:"Beraten Sie mich",
   scope_h:"Ist alles erfasst? Prüfen Sie es", scope_s:"Das ist bereits im Plan. Falls etwas fehlt — hier hineinschreiben, es geht direkt ein.",
   ck1:"Feuchte-Diagnose + Öffnungen", ck2:"Statik-Prüfung aller Balken", ck3:"Verstärkung gebrochener Balken & Durchhang", ck4:"Steinwand-Restaurierung/Finish (A/B)", ck5:"Sperre gegen aufsteigende Feuchte", ck6:"Abfluss-Abdichtung", ck7:"Montage Kamin-Absaugung", ck8:"Neue normgerechte Treppe (A/B)", ck9:"Risse Küchendecke", ck10:"Patio-Bad",
+  q8:"Steinwände — gewählte Richtung", q8b:"Wände — Kombination", q10:"Treppe — gewählte Richtung", q13:"Risse Küchendecke — Ihre Hinweise", q14:"Patio-Bad — Ihre Entscheidung",
   q15:"Fehlt etwas auf dieser Liste? Was beschäftigt Sie noch oder soll mit hinein?",
   q16:"Ab Mitte September: Wer kann uns Zugang zum Haus geben?",
   q17:"Einverstanden, dass unser Anwalt die Behördenmeldung für Sie einreicht (einfache Vollmacht per E-Signatur)?",
@@ -572,7 +661,8 @@ document.querySelectorAll('[data-radio]').forEach(group => {
   });
 });
 
-const KEYS = ['q1','q2','q3','q4','q5','q6','q7','q8','q8b','q9','q10','q11','q12','q13','q14','q15','q16','q17','q18','q19','q20'];
+const KEYS = ['q1','q2','q3','q4','q5','q6','q7','q8','q8b','q9','q10','q11','q12','q13','q14','q15','q16','q17','q18','q19','q20','a1','a2','a3','a4','a5','a6'];
+const ADD_TITLES = {a1:'i1h',a2:'i2h',a3:'i3h',a4:'i4h',a5:'i5h',a6:'i6h'};
 const CKEYS = ['c_f1','c_f2','c_f3','c_f4','c_stone'];
 function updateCount() {
   const n = KEYS.filter(k => store(k).trim() !== '').length;
@@ -581,17 +671,93 @@ function updateCount() {
 function compile() {
   const t = I[S.lang];
   let out = t.wa_head + '\n';
-  KEYS.forEach(k => { const v = store(k).trim(); if (v) out += '\n' + k.toUpperCase() + ': ' + v; });
-  CKEYS.forEach(k => { const v = store(k).trim(); if (v) out += '\n[' + k + ']: ' + v; });
+  KEYS.forEach(k => { const v = store(k).trim(); if (!v) return;
+    if (k.startsWith('a')) { out += '\n+ ' + t[ADD_TITLES[k]]; } else { out += '\n' + k.toUpperCase() + ': ' + v; } });
+  CKEYS.forEach(k => { const a = logGet(k); a.forEach(e => { out += '\n[' + k + ' ' + fmtT(e.t) + (e.struck ? ' DURCHGESTRICHEN' : '') + ']: ' + e.text; }); });
+  if (PHOTOS.length) out += '\n' + I[S.lang].wa_photos;
   return out;
 }
-document.getElementById('wabtn').addEventListener('click', () => {
+const VALMAP = {yes:'opt_yes',talk:'opt_talk',maybe:'opt_talk',outside:'opt_roof_out',inside:'opt_roof_in',info:'opt_roof_info',no:'opt_no',mix:'opt_mix',white:'opt_white',natural:'opt_natural',functional:'opt_func',design:'opt_design',renovate:'opt_renovate',repair:'opt_repair',advise:'opt_advise',ordered:'opt_ordered',delivered:'opt_delivered',unknown:'opt_unknown',A:'A',B:'B'};
+function valLabel(t, v){ const m = VALMAP[v]; return m && t[m] ? t[m] : v; }
+function buildPdfDom(){
+  const t = I[S.lang];
+  const w = document.createElement('div');
+  w.style.cssText = 'font-family:Helvetica,Arial,sans-serif;color:#222;padding:6mm;width:190mm;background:#fff';
+  let h = '<h1 style="font-size:20px;margin-bottom:2px">Casa Belfast 17 — ' + t.wa_head + '</h1>' +
+    '<div style="font-size:11px;color:#777;margin-bottom:14px">' + new Date().toLocaleString() + ' · Calle de Belfast 17, 03005 Alicante</div>';
+  KEYS.forEach(k => { const v = store(k).trim(); if (!v) return;
+    if (k.startsWith('a')) { h += '<div style="font-size:12px;margin:5px 0"><b style="color:#a8763e">+ ' + t[ADD_TITLES[k]] + '</b></div>'; }
+    else { const qk = t[k] || k.toUpperCase();
+      h += '<div style="font-size:12px;margin:7px 0"><div style="font-weight:bold">' + qk + '</div><div>' + valLabel(t, v).replace(/</g,'&lt;') + '</div></div>'; } });
+  CKEYS.forEach(k => { const a = logGet(k); if (!a.length) return;
+    h += '<div style="font-size:12px;margin:9px 0"><div style="font-weight:bold;color:#a8763e">[' + k + ']</div>';
+    a.forEach(e => { h += '<div style="' + (e.struck ? 'text-decoration:line-through;color:#999;' : '') + 'margin:2px 0"><span style="color:#777;font-size:10px">' + fmtT(e.t) + (e.struck && e.struckAt ? ' · ⊘ ' + fmtT(e.struckAt) : '') + '</span> — ' + String(e.text).replace(/</g,'&lt;') + '</div>'; });
+    h += '</div>'; });
+  if (PHOTOS.length) { h += '<div style="font-size:14px;font-weight:bold;margin:12px 0 6px;page-break-before:always">Fotos (' + PHOTOS.length + ')</div>';
+    PHOTOS.forEach(p => { h += '<div style="margin:8px 0;page-break-inside:avoid"><div style="font-size:10px;color:#777">' + fmtT(p.t) + (p.cap ? ' — ' + String(p.cap).replace(/</g,'&lt;') : '') + '</div><img src="' + p.data + '" style="max-width:174mm;max-height:120mm"></div>'; }); }
+  w.innerHTML = h; return w;
+}
+document.getElementById('wabtn').addEventListener('click', async () => {
+  const t = I[S.lang];
+  const fname = t.pdf_name + '-' + new Date().toISOString().slice(0,10) + '.pdf';
+  try {
+    if (window.html2pdf) {
+      await html2pdf().set({margin:8, filename:fname, image:{type:'jpeg',quality:.92}, html2canvas:{scale:2}, jsPDF:{unit:'mm',format:'a4'}}).from(buildPdfDom()).save();
+    }
+  } catch(e) { console.warn('PDF export failed', e); }
   window.open('https://wa.me/491742010380?text=' + encodeURIComponent(compile()), '_blank');
 });
 document.getElementById('copybtn').addEventListener('click', async () => {
   await navigator.clipboard.writeText(compile());
   document.getElementById('copybtn').textContent = '✓';
   setTimeout(applyLang, 1200);
+});
+
+// fotos (IndexedDB, verlustsicher auf dem Geraet)
+const idb = { db: null,
+  open(){ return new Promise((res, rej) => { const r = indexedDB.open('cb17', 1);
+    r.onupgradeneeded = () => r.result.createObjectStore('photos', {keyPath:'id'});
+    r.onsuccess = () => { idb.db = r.result; res(); }; r.onerror = () => rej(r.error); }); },
+  tx(mode){ return idb.db.transaction('photos', mode).objectStore('photos'); },
+  put(p){ return new Promise((res, rej) => { const q = idb.tx('readwrite').put(p); q.onsuccess = res; q.onerror = () => rej(q.error); }); },
+  all(){ return new Promise((res, rej) => { const q = idb.tx('readonly').getAll(); q.onsuccess = () => res(q.result || []); q.onerror = () => rej(q.error); }); },
+  del(id){ return new Promise((res, rej) => { const q = idb.tx('readwrite').delete(id); q.onsuccess = res; q.onerror = () => rej(q.error); }); } };
+let PHOTOS = [];
+function shrink(file){ return new Promise(res => { const img = new Image(); img.onload = () => {
+  const M = 1200; let w = img.width, h = img.height; if (Math.max(w,h) > M) { const f = M/Math.max(w,h); w = Math.round(w*f); h = Math.round(h*f); }
+  const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h);
+  res(c.toDataURL('image/jpeg', .78)); }; img.src = URL.createObjectURL(file); }); }
+async function renderPhotos(){ const t = I[S.lang]; const g = document.getElementById('pgrid'); g.innerHTML = '';
+  PHOTOS.forEach(p => { const d = document.createElement('div'); d.className = 'pitem';
+    const im = document.createElement('img'); im.src = p.data;
+    const pt = document.createElement('div'); pt.className = 'pt'; pt.textContent = fmtT(p.t);
+    const cap = document.createElement('input'); cap.type = 'text'; cap.placeholder = t.ph_cap; cap.value = p.cap || '';
+    cap.addEventListener('change', async () => { p.cap = cap.value; await idb.put(p); });
+    const del = document.createElement('button'); del.className = 'pdel'; del.textContent = t.ph_del;
+    del.addEventListener('click', async () => { await idb.del(p.id); PHOTOS = PHOTOS.filter(x => x.id !== p.id); renderPhotos(); updateCount(); });
+    d.appendChild(im); d.appendChild(pt); d.appendChild(cap); d.appendChild(del); g.appendChild(d); }); }
+idb.open().then(async () => { PHOTOS = await idb.all(); PHOTOS.sort((a,b) => a.t.localeCompare(b.t)); renderPhotos(); updateCount(); }).catch(e => console.warn('idb', e));
+document.getElementById('upzone').addEventListener('click', () => document.getElementById('upinput').click());
+document.getElementById('upinput').addEventListener('change', async ev => {
+  for (const f of ev.target.files) { const data = await shrink(f);
+    const p = { id: Date.now() + '-' + Math.random().toString(36).slice(2,8), t: new Date().toISOString(), cap: '', data };
+    await idb.put(p); PHOTOS.push(p); }
+  ev.target.value = ''; renderPhotos(); updateCount(); });
+
+// kommentar-chronologie (append-only, durchstreichbar)
+function logGet(k){ const raw = store(k); if (!raw) return []; try { const a = JSON.parse(raw); return Array.isArray(a) ? a : [{t:new Date().toISOString(),text:String(raw)}]; } catch(e){ return [{t:new Date().toISOString(),text:raw}]; } }
+function logSave(k,a){ save(k, JSON.stringify(a)); }
+function fmtT(iso){ const d = new Date(iso); return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function renderLog(k){ const el = document.querySelector('[data-log="'+k+'"]'); if (!el) return; const a = logGet(k); el.innerHTML=''; a.forEach(e => { const d = document.createElement('div'); d.className = 'centry' + (e.struck ? ' struck' : ''); const ct = document.createElement('span'); ct.className='ct'; ct.textContent = fmtT(e.t); const cx = document.createElement('span'); cx.className='cx'; cx.textContent = e.text; d.appendChild(ct); d.appendChild(cx); d.addEventListener('click', () => { e.struck = !e.struck; e.struckAt = e.struck ? new Date().toISOString() : undefined; logSave(k, a); renderLog(k); }); el.appendChild(d); }); }
+document.querySelectorAll('[data-cadd]').forEach(b => { const k = b.dataset.cadd; renderLog(k); b.addEventListener('click', () => { const ta = document.querySelector('[data-cin="'+k+'"]'); const v = ta.value.trim(); if (!v) return; const a = logGet(k); a.push({t:new Date().toISOString(), text:v}); logSave(k, a); ta.value=''; renderLog(k); updateCount(); }); });
+
+// add-buttons (Ideen)
+document.querySelectorAll('.addbtn').forEach(b => {
+  const k = b.dataset.add;
+  const sync = () => { const on = store(k) === '1'; b.classList.toggle('on', on); b.querySelector('span').setAttribute('data-i', on ? 'added' : 'add'); };
+  if (store(k) === '1') b.classList.add('on');
+  b.addEventListener('click', () => { save(k, store(k) === '1' ? '' : '1'); sync(); applyLang(); updateCount(); });
+  sync();
 });
 
 // reveal on scroll
