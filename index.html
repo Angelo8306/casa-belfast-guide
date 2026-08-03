@@ -171,6 +171,15 @@ body.wizard section.active{display:block;border-top:none;padding-top:26px}
 body.wizard section h2{cursor:default;padding-right:0}
 body.wizard section h2:after{display:none}
 body.wizard footer{display:none}
+body.wizard .snum{display:none}
+.secnav{-webkit-mask-image:linear-gradient(to right,#000 92%,transparent);mask-image:linear-gradient(to right,#000 92%,transparent)}
+details.callout summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+details.callout summary::after{content:"▾";margin-left:8px;color:var(--ochre)}
+details.callout[open] summary::after{content:"▴"}
+.starthint{font-size:.85rem;color:var(--ink2);margin-top:10px}
+html,body{overflow-x:clip}
+h1,h2,h3,p{overflow-wrap:break-word}
+img,iframe{max-width:100%}
 .wizbar-step{flex:1;text-align:center;font-size:.82rem;color:#b7ac99;min-width:0}
 .wizbar-step b{color:var(--ochre)}
 .btn.nav{background:transparent;color:var(--sand);border-color:var(--sand);min-height:44px}
@@ -225,6 +234,7 @@ body.wizard footer{display:none}
   <p class="lede" data-i="lede"></p>
   <div class="note"><span class="dot"></span><span data-i="livenote"></span></div>
     <div class="startrow"><button class="btn" id="startbtn" data-i="w_start"></button></div>
+    <p class="starthint" data-i="w_hint"></p>
 </div></header>
 
 <section id="tour"><div class="wrap reveal">
@@ -273,7 +283,7 @@ body.wizard footer{display:none}
       <div class="step"><span class="n"></span><p data-i="dp2"></p></div>
       <div class="step"><span class="n"></span><p data-i="dp3"></p></div>
       <div class="step"><span class="n"></span><p data-i="dp4"></p></div>
-      <div class="callout" data-i="dry_call"></div>
+      <details class="callout"><summary data-i="det_dry"></summary><p data-i="dry_call" style="margin-top:8px"></p></details>
     </div>
   </div>
   <div class="q" style="margin-top:26px">
@@ -477,6 +487,7 @@ es: {
   t_idea:"Idea", add:"+ Añadir a mi plan", added:"✓ Añadido",
   w_start:"Empezar — 5 minutos", w_next:"Siguiente", w_back:"Atrás", w_tosummary:"Al resumen", w_step:"Paso", w_of:"de", n_send:"Enviar",
   w_send_h:"¡Listo! Revise y envíe", w_send_s:"Así está su recorrido. Puede volver a cualquier paso — nada se pierde. Al enviar se crea un PDF con todo (respuestas, comentarios, fotos) y se abre WhatsApp.",
+  w_send_h_open:"Casi listo — aún hay puntos abiertos", w_sendanyway:"Enviar igualmente", w_hint:"10 pasos cortos · se guarda automáticamente · puede pausar cuando quiera", det_dry:"Conviene saber: cómo secan sus muros",
   w_open:"abrir", w_none:"pendiente", w_ans:"respondido", w_pdfmaking:"Creando PDF…", w_sent:"✓ Enviado — ¡gracias!",
   n_tour:"3D-Tour", n_find:"Hallazgos", n_damp:"Humedad", n_roof:"Cubierta", n_stone:"Piedra", n_stairs:"Escalera", n_ideas:"Ideas", n_extra:"Cocina y baño", n_scope:"Lista", n_photos:"Fotos",
   ph_s2:"Trabaje la lista poco a poco — cada punto con su propio botón. Todo se guarda en su dispositivo y entra en el PDF.",
@@ -562,6 +573,7 @@ en: {
   t_idea:"Idea", add:"+ Add to my plan", added:"✓ Added",
   w_start:"Start — 5 minutes", w_next:"Next", w_back:"Back", w_tosummary:"To summary", w_step:"Step", w_of:"of", n_send:"Send",
   w_send_h:"Done! Review & send", w_send_s:"Here is your progress. You can return to any step — nothing gets lost. Sending creates a PDF with everything (answers, comments, photos) and opens WhatsApp.",
+  w_send_h_open:"Almost done — some points still open", w_sendanyway:"Send anyway", w_hint:"10 short steps · saved automatically · pause anytime", det_dry:"Good to know: how your walls dry",
   w_open:"open", w_none:"pending", w_ans:"answered", w_pdfmaking:"Creating PDF…", w_sent:"✓ Sent — thank you!",
   n_tour:"3D tour", n_find:"Findings", n_damp:"Damp", n_roof:"Roof", n_stone:"Stone", n_stairs:"Stairs", n_ideas:"Ideas", n_extra:"Kitchen & bath", n_scope:"Checklist", n_photos:"Photos",
   ph_s2:"Work through the list step by step — each item has its own button. Everything is stored on your device and goes into the PDF.",
@@ -647,6 +659,7 @@ de: {
   t_idea:"Idee", add:"+ Zu meinem Plan", added:"✓ Hinzugefügt",
   w_start:"Los geht's — 5 Minuten", w_next:"Weiter", w_back:"Zurück", w_tosummary:"Zur Übersicht", w_step:"Schritt", w_of:"von", n_send:"Senden",
   w_send_h:"Fertig! Prüfen & senden", w_send_s:"So steht Ihr Durchgang. Sie können zu jedem Schritt zurück — nichts geht verloren. Beim Senden entsteht ein PDF mit allem (Antworten, Kommentare, Fotos) und WhatsApp öffnet sich.",
+  w_send_h_open:"Fast fertig — noch offene Punkte", w_sendanyway:"Trotzdem senden", w_hint:"10 kurze Schritte · automatisch gespeichert · jederzeit pausierbar", det_dry:"Gut zu wissen: So trocknen Ihre Wände",
   w_open:"öffnen", w_none:"offen", w_ans:"beantwortet", w_pdfmaking:"PDF wird erstellt…", w_sent:"✓ Gesendet — danke!",
   n_tour:"3D-Tour", n_find:"Befunde", n_damp:"Feuchte", n_roof:"Dach", n_stone:"Stein", n_stairs:"Treppe", n_ideas:"Ideen", n_extra:"Küche & Bad", n_scope:"Liste", n_photos:"Fotos",
   ph_s2:"Arbeiten Sie die Liste Stück für Stück ab — jeder Punkt hat seinen eigenen Button. Alles wird auf Ihrem Gerät gespeichert und wandert ins PDF.",
@@ -735,6 +748,7 @@ function applyLang() {
   document.querySelectorAll('[data-i]').forEach(el => { const k = el.getAttribute('data-i'); if (t[k] !== undefined) el.textContent = t[k]; });
   document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b.dataset.lang === S.lang));
   if (typeof renderPhotos === 'function') renderPhotos();
+  if (typeof STEPS !== 'undefined' && STEPS[STEP] === 'send') renderSummary();
   navState();
   updateCount();
 }
@@ -877,12 +891,18 @@ function navState(){
 }
 function renderSummary(){
   const t = I[S.lang];
+  let open = 0;
+  Object.keys(SECKEYS).forEach(id => { open += SECKEYS[id].filter(x => store(x).trim() === '').length; });
+  const h2s = document.querySelector('#send h2');
+  if (h2s) h2s.textContent = open > 0 ? t.w_send_h_open : t.w_send_h;
+  const wab = document.getElementById('wabtn');
+  if (wab && !wab.disabled) wab.textContent = open > 0 ? t.w_sendanyway : t.send;
   const list = document.getElementById('sumlist'); list.innerHTML = '';
   NAV.forEach(([id, k]) => { if (id === 'send') return;
     const d = document.createElement('div');
     let status = '';
-    if (SECKEYS[id]) { const n = SECKEYS[id].filter(x => store(x).trim() !== '').length;
-      status = n ? ('✓ ' + n + ' ' + t.w_ans) : t.w_none; d.className = 'sumitem' + (n ? ' ok' : ''); }
+    if (SECKEYS[id]) { const n = SECKEYS[id].filter(x => store(x).trim() !== '').length; const miss = SECKEYS[id].length - n;
+      status = miss === 0 ? ('✓ ' + n + ' ' + t.w_ans) : (n + '/' + SECKEYS[id].length + ' ' + t.w_ans); d.className = 'sumitem' + (miss === 0 ? ' ok' : ''); }
     else if (id === 'photos') { const n = PHOTOS.length; status = n ? ('✓ ' + n + ' ' + t.ph_some) : t.w_none; d.className = 'sumitem' + (n ? ' ok' : ''); }
     else { d.className = 'sumitem ok'; status = '✓'; }
     d.innerHTML = '<span class="st">' + t[k] + '</span><span class="ss">' + status + '</span><span class="go">' + t.w_open + ' ›</span>';
