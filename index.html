@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Casa Belfast 17 · Renovation Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#f6f1e7; --sand2:#efe7d8; --ink:#26221b; --ink2:#5c554a;
+  --ochre:#a8763e; --ochre2:#8a5f2e; --line:#d9cfbc; --white:#fffdf9;
+  --ok:#4d6b4f; --warn:#a04b2f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',sans-serif;background:var(--sand);color:var(--ink);line-height:1.65;
+  background-image:radial-gradient(rgba(168,118,62,.05) 1px, transparent 1px);background-size:26px 26px}
+h1,h2,h3,.serif{font-family:'Fraunces',serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+/* topbar */
+.top{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;letter-spacing:.02em}
+.brand em{color:var(--ochre);font-style:normal}
+.langs{display:flex;gap:6px}
+.langs button{border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:inherit;font-weight:700;
+  font-size:.78rem;padding:5px 12px;border-radius:99px;cursor:pointer;transition:.18s}
+.langs button.on{background:var(--ink);color:var(--sand)}
+/* hero */
+.hero{padding:72px 0 40px}
+.eyebrow{display:inline-block;font-weight:700;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ochre2);border:1.5px solid var(--ochre);border-radius:99px;padding:6px 14px;margin-bottom:22px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;line-height:1.04;letter-spacing:-.01em}
+.lede{max-width:640px;font-size:1.08rem;color:var(--ink2);margin-top:20px}
+.hero .note{margin-top:26px;display:inline-flex;gap:10px;align-items:center;background:var(--white);
+  border:1.5px solid var(--line);border-radius:12px;padding:10px 16px;font-size:.88rem;color:var(--ink2)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ok);flex:none;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+/* sections */
+section{padding:54px 0;border-top:1px solid var(--line)}
+.snum{font-family:'Fraunces',serif;font-size:.95rem;font-weight:600;color:var(--ochre);letter-spacing:.14em;margin-bottom:8px}
+h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:700;line-height:1.15;margin-bottom:14px}
+.sub{color:var(--ink2);max-width:680px;margin-bottom:26px}
+/* tour */
+.tour{border:2px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:10px 10px 0 rgba(38,34,27,.08)}
+.tour iframe{width:100%;height:520px;display:block;border:0}
+/* findings grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.card{background:var(--white);border:1.5px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:190px;object-fit:cover}
+.card .pad{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:1.12rem}
+.card p{font-size:.92rem;color:var(--ink2)}
+.tag{align-self:flex-start;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:3px 10px;border-radius:99px;background:var(--sand2);color:var(--ochre2)}
+.tag.crit{background:#f3ded5;color:var(--warn)}
+/* advice */
+.advice{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+@media(max-width:820px){.advice{grid-template-columns:1fr}}
+.quote{background:var(--ink);color:var(--sand);border-radius:16px;padding:26px 28px;font-family:'Fraunces',serif;
+  font-size:1.25rem;line-height:1.45;position:relative}
+.quote:before{content:"„";position:absolute;top:-8px;left:16px;font-size:4.4rem;color:var(--ochre);opacity:.85}
+.quote .who{display:block;margin-top:14px;font-family:'Archivo',sans-serif;font-size:.78rem;letter-spacing:.14em;
+  text-transform:uppercase;color:#b7ac99}
+.steps{counter-reset:s}
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step .n{counter-increment:s;flex:none;width:34px;height:34px;border-radius:50%;background:var(--ochre);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Fraunces',serif}
+.step .n:before{content:counter(s)}
+.step p{font-size:.95rem}
+.callout{background:var(--sand2);border-left:4px solid var(--ochre);border-radius:0 12px 12px 0;padding:16px 20px;
+  margin-top:20px;font-size:.95rem}
+/* options */
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.opts{grid-template-columns:1fr}}
+.opt{background:var(--white);border:2px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:.2s;position:relative}
+.opt img{width:100%;height:300px;object-fit:cover;display:block}
+.opt .oh{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--ink);color:var(--sand)}
+.opt .oh .ab{font-family:'Fraunces',serif;font-weight:700;color:var(--ochre);font-size:1.2rem}
+.opt ul{list-style:none;padding:14px 18px 18px}
+.opt ul li{font-size:.9rem;color:var(--ink2);padding-left:20px;position:relative;margin-bottom:6px}
+.opt ul li:before{content:"✓";position:absolute;left:0;color:var(--ochre);font-weight:700}
+.opt.sel{border-color:var(--ochre);box-shadow:0 0 0 3px rgba(168,118,62,.25)}
+.opt .pick{position:absolute;top:12px;right:12px;background:var(--white);border:2px solid var(--ink);border-radius:99px;
+  padding:5px 14px;font-size:.78rem;font-weight:700}
+.opt.sel .pick{background:var(--ochre);border-color:var(--ochre);color:#fff}
+.ist{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.ist img{width:110px;height:82px;object-fit:cover;border-radius:10px;border:1.5px solid var(--line)}
+.ist span{font-size:.85rem;color:var(--ink2);font-style:italic}
+.chiprow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.chip{border:1.5px solid var(--ink);background:var(--white);border-radius:99px;padding:8px 18px;font:inherit;
+  font-size:.88rem;font-weight:500;cursor:pointer;transition:.15s}
+.chip.on{background:var(--ink);color:var(--sand)}
+/* forms */
+textarea,input[type=text]{width:100%;font:inherit;font-size:.92rem;background:var(--white);border:1.5px solid var(--line);
+  border-radius:10px;padding:10px 14px;color:var(--ink);resize:vertical;min-height:44px}
+textarea:focus,input:focus{outline:none;border-color:var(--ochre)}
+.q{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+.q .qt{font-weight:700;margin-bottom:10px;display:flex;gap:10px}
+.q .qn{color:var(--ochre);font-family:'Fraunces',serif}
+.comment-btn{background:none;border:none;color:var(--ochre2);font:inherit;font-size:.82rem;font-weight:700;
+  cursor:pointer;margin-top:10px;text-decoration:underline;text-underline-offset:3px}
+.cbox{margin-top:10px;display:none}
+.cbox.open{display:block}
+/* checklist */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-bottom:22px}
+.citem{display:flex;gap:10px;align-items:center;background:var(--white);border:1.5px solid var(--line);
+  border-radius:10px;padding:10px 14px;font-size:.9rem}
+.citem .ic{color:var(--ok);font-weight:700}
+/* sendbar */
+.sendbar{position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--ink);color:var(--sand)}
+.sendbar .wrap{display:flex;align-items:center;gap:14px;padding:12px 22px;flex-wrap:wrap}
+.sendbar .cnt{font-size:.88rem;flex:1;min-width:180px}
+.sendbar .cnt b{color:var(--ochre)}
+.btn{font:inherit;font-weight:700;border-radius:99px;padding:10px 22px;cursor:pointer;border:2px solid transparent;transition:.15s}
+.btn.wa{background:#39c05c;color:#fff;border-color:#39c05c}
+.btn.ghost{background:transparent;color:var(--sand);border-color:var(--sand)}
+.btn:hover{transform:translateY(-1px)}
+footer{padding:50px 0 120px;color:var(--ink2);font-size:.88rem}
+.reveal{opacity:0;transform:translateY(18px);transition:.6s ease}
+.reveal.vis{opacity:1;transform:none}
+.imgnote{font-size:.78rem;color:var(--ink2);font-style:italic;margin-top:10px}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="brand">Casa <em>Belfast 17</em></div>
+  <div class="langs">
+    <button data-lang="es">ES</button><button data-lang="en" class="on">EN</button><button data-lang="de">DE</button>
+  </div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow" data-i="eyebrow"></span>
+  <h1><span data-i="h1a"></span><br><span data-i="h1b" style="color:var(--ochre)"></span></h1>
+  <p class="lede" data-i="lede"></p>
+  <div class="note"><span class="dot"></span><span data-i="livenote"></span></div>
+</div></header>
+
+<section id="tour"><div class="wrap reveal">
+  <div class="snum">01</div>
+  <h2 data-i="tour_h"></h2>
+  <p class="sub" data-i="tour_s"></p>
+  <div class="tour"><iframe src="https://my.matterport.com/show/?m=vXJpRRoEgse" loading="lazy" allow="fullscreen; vr" allowfullscreen></iframe></div>
+  <p style="margin-top:14px"><a class="btn wa" style="display:inline-block;text-decoration:none;background:var(--ink);border-color:var(--ink);color:var(--sand)" href="https://my.matterport.com/show/?m=vXJpRRoEgse" target="_blank" rel="noopener" data-i="opentour"></a></p>
+</div></section>
+
+<section id="findings"><div class="wrap reveal">
+  <div class="snum">02</div>
+  <h2 data-i="find_h"></h2>
+  <p class="sub" data-i="find_s"></p>
+  <div class="grid">
+    <div class="card"><img src="assets/stein_ist.jpg" alt=""><div class="pad">
+      <span class="tag crit" data-i="t_crit"></span><h3 data-i="f1h"></h3><p data-i="f1"></p>
+      <button class="comment-btn" data-c="c_f1" data-i="addc"></button><div class="cbox" id="c_f1"><textarea data-store="c_f1"></textarea></div>
+    </div></div>
+    <div class="card"><img src="assets/treppe_ist.jpg" alt=""><div class="pad">
+      <span class="tag crit" data-i="t_crit"></span><h3 data-i="f2h"></h3><p data-i="f2"></p>
+      <button class="comment-btn" data-c="c_f2" data-i="addc"></button><div class="cbox" id="c_f2"><textarea data-store="c_f2"></textarea></div>
+    </div></div>
+    <div class="card"><img src="assets/kueche_decke.jpg" alt=""><div class="pad">
+      <span class="tag" data-i="t_new"></span><h3 data-i="f3h"></h3><p data-i="f3"></p>
+      <button class="comment-btn" data-c="c_f3" data-i="addc"></button><div class="cbox" id="c_f3"><textarea data-store="c_f3"></textarea></div>
+    </div></div>
+    <div class="card"><img src="assets/bad_schaden.jpg" alt=""><div class="pad">
+      <span class="tag" data-i="t_new"></span><h3 data-i="f4h"></h3><p data-i="f4"></p>
+      <button class="comment-btn" data-c="c_f4" data-i="addc"></button><div class="cbox" id="c_f4"><textarea data-store="c_f4"></textarea></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="damp"><div class="wrap reveal">
+  <div class="snum">03</div>
+  <h2 data-i="damp_h"></h2>
+  <p class="sub" data-i="damp_s"></p>
+  <div class="advice">
+    <div>
+      <div class="quote"><span data-i="damp_q"></span><span class="who" data-i="damp_qw"></span></div>
+      <div class="callout" data-i="damp_call"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n"></span><p data-i="dp1"></p></div>
+      <div class="step"><span class="n"></span><p data-i="dp2"></p></div>
+      <div class="step"><span class="n"></span><p data-i="dp3"></p></div>
+      <div class="step"><span class="n"></span><p data-i="dp4"></p></div>
+    </div>
+  </div>
+  <div class="q" style="margin-top:26px">
+    <div class="qt"><span class="qn">Q1</span><span data-i="q1"></span></div><textarea data-store="q1"></textarea>
+  </div>
+  <div class="q"><div class="qt"><span class="qn">Q2</span><span data-i="q2"></span></div>
+    <div class="chiprow" data-radio="q2">
+      <button class="chip" data-v="yes" data-i="opt_yes"></button>
+      <button class="chip" data-v="talk" data-i="opt_talk"></button>
+    </div></div>
+  <div class="q"><div class="qt"><span class="qn">Q3</span><span data-i="q3"></span></div><textarea data-store="q3"></textarea></div>
+  <div class="q"><div class="qt"><span class="qn">Q4</span><span data-i="q4"></span></div><textarea data-store="q4"></textarea></div>
+</div></section>
+
+<section id="roof"><div class="wrap reveal">
+  <div class="snum">04</div>
+  <h2 data-i="roof_h"></h2>
+  <p class="sub" data-i="roof_s"></p>
+  <div class="callout" data-i="roof_call"></div>
+  <div class="q" style="margin-top:22px"><div class="qt"><span class="qn">Q5</span><span data-i="q5"></span></div>
+    <div class="chiprow" data-radio="q5">
+      <button class="chip" data-v="outside" data-i="opt_roof_out"></button>
+      <button class="chip" data-v="inside" data-i="opt_roof_in"></button>
+      <button class="chip" data-v="info" data-i="opt_roof_info"></button>
+      <button class="chip" data-v="no" data-i="opt_no"></button>
+    </div></div>
+  <div class="q"><div class="qt"><span class="qn">Q6</span><span data-i="q6"></span></div><textarea data-store="q6"></textarea></div>
+  <div class="q"><div class="qt"><span class="qn">Q7</span><span data-i="q7"></span></div>
+    <div class="chiprow" data-radio="q7">
+      <button class="chip" data-v="yes" data-i="opt_yes"></button>
+      <button class="chip" data-v="talk" data-i="opt_talk"></button>
+    </div></div>
+</div></section>
+
+<section id="stone"><div class="wrap reveal">
+  <div class="snum">05</div>
+  <h2 data-i="stone_h"></h2>
+  <p class="sub" data-i="stone_s"></p>
+  <div class="ist"><img src="assets/stein_ist.jpg" alt=""><span data-i="ist"></span></div>
+  <div class="opts" data-radio="q8">
+    <div class="opt" data-v="A"><span class="pick" data-i="pick"></span><img src="assets/stein_a.jpg" alt="">
+      <div class="oh"><span class="ab">A</span><span data-i="stone_a_t"></span></div>
+      <ul><li data-i="sa1"></li><li data-i="sa2"></li><li data-i="sa3"></li></ul></div>
+    <div class="opt" data-v="B"><span class="pick" data-i="pick"></span><img src="assets/stein_b.jpg" alt="">
+      <div class="oh"><span class="ab">B</span><span data-i="stone_b_t"></span></div>
+      <ul><li data-i="sb1"></li><li data-i="sb2"></li><li data-i="sb3"></li></ul></div>
+  </div>
+  <div class="chiprow" data-radio="q8b" style="margin-top:14px">
+    <button class="chip" data-v="mix" data-i="opt_mix"></button>
+  </div>
+  <p class="imgnote" data-i="viznote"></p>
+  <div class="q" style="margin-top:18px"><div class="qt"><span class="qn">Q9</span><span data-i="q9"></span></div>
+    <div class="chiprow" data-radio="q9">
+      <button class="chip" data-v="white" data-i="opt_white"></button>
+      <button class="chip" data-v="natural" data-i="opt_natural"></button>
+    </div></div>
+  <button class="comment-btn" data-c="c_stone" data-i="addc"></button><div class="cbox" id="c_stone"><textarea data-store="c_stone"></textarea></div>
+</div></section>
+
+<section id="stairs"><div class="wrap reveal">
+  <div class="snum">06</div>
+  <h2 data-i="stairs_h"></h2>
+  <p class="sub" data-i="stairs_s"></p>
+  <div class="ist"><img src="assets/treppe_ist.jpg" alt=""><span data-i="ist"></span></div>
+  <div class="opts" data-radio="q10">
+    <div class="opt" data-v="A"><span class="pick" data-i="pick"></span><img src="assets/treppe_a.jpg" alt="">
+      <div class="oh"><span class="ab">A</span><span data-i="stairs_a_t"></span></div>
+      <ul><li data-i="ta1"></li><li data-i="ta2"></li><li data-i="ta3"></li></ul></div>
+    <div class="opt" data-v="B"><span class="pick" data-i="pick"></span><img src="assets/treppe_b.jpg" alt="">
+      <div class="oh"><span class="ab">B</span><span data-i="stairs_b_t"></span></div>
+      <ul><li data-i="tb1"></li><li data-i="tb2"></li><li data-i="tb3"></li></ul></div>
+  </div>
+  <p class="imgnote" data-i="viznote"></p>
+  <div class="q" style="margin-top:18px"><div class="qt"><span class="qn">Q11</span><span data-i="q11"></span></div><textarea data-store="q11"></textarea></div>
+  <div class="q"><div class="qt"><span class="qn">Q12</span><span data-i="q12"></span></div>
+    <div class="chiprow" data-radio="q12">
+      <button class="chip" data-v="functional" data-i="opt_func"></button>
+      <button class="chip" data-v="design" data-i="opt_design"></button>
+    </div></div>
+</div></section>
+
+<section id="extra"><div class="wrap reveal">
+  <div class="snum">07</div>
+  <h2 data-i="extra_h"></h2>
+  <p class="sub" data-i="extra_s"></p>
+  <div class="grid">
+    <div class="card"><img src="assets/kueche_decke.jpg" alt=""><div class="pad">
+      <h3 data-i="ex1h"></h3><p data-i="ex1"></p>
+      <div class="qt" style="margin-top:8px"><span class="qn">Q13</span></div><textarea data-store="q13"></textarea>
+    </div></div>
+    <div class="card"><img src="assets/patio_bad.jpg" alt=""><div class="pad">
+      <h3 data-i="ex2h"></h3><p data-i="ex2"></p>
+      <div class="qt" style="margin-top:8px"><span class="qn">Q14</span></div>
+      <div class="chiprow" data-radio="q14">
+        <button class="chip" data-v="renovate" data-i="opt_renovate"></button>
+        <button class="chip" data-v="repair" data-i="opt_repair"></button>
+        <button class="chip" data-v="advise" data-i="opt_advise"></button>
+      </div>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="scope"><div class="wrap reveal">
+  <div class="snum">08</div>
+  <h2 data-i="scope_h"></h2>
+  <p class="sub" data-i="scope_s"></p>
+  <div class="check">
+    <div class="citem"><span class="ic">✓</span><span data-i="ck1"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck2"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck3"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck4"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck5"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck6"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck7"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck8"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck9"></span></div>
+    <div class="citem"><span class="ic">✓</span><span data-i="ck10"></span></div>
+  </div>
+  <div class="q"><div class="qt"><span class="qn">Q15</span><span data-i="q15"></span></div><textarea data-store="q15" rows="3"></textarea></div>
+  <div class="q"><div class="qt"><span class="qn">Q16</span><span data-i="q16"></span></div><textarea data-store="q16"></textarea></div>
+  <div class="q"><div class="qt"><span class="qn">Q17</span><span data-i="q17"></span></div>
+    <div class="chiprow" data-radio="q17">
+      <button class="chip" data-v="yes" data-i="opt_yes"></button>
+      <button class="chip" data-v="maybe" data-i="opt_talk"></button>
+    </div></div>
+  <div class="q"><div class="qt"><span class="qn">Q18</span><span data-i="q18"></span></div>
+    <div class="chiprow" data-radio="q18">
+      <button class="chip" data-v="ordered" data-i="opt_ordered"></button>
+      <button class="chip" data-v="delivered" data-i="opt_delivered"></button>
+      <button class="chip" data-v="unknown" data-i="opt_unknown"></button>
+    </div></div>
+  <div class="q"><div class="qt"><span class="qn">Q19</span><span data-i="q19"></span></div><textarea data-store="q19"></textarea></div>
+  <div class="q"><div class="qt"><span class="qn">Q20</span><span data-i="q20"></span></div>
+    <div class="chiprow" data-radio="q20">
+      <button class="chip" data-v="yes" data-i="opt_yes"></button>
+      <button class="chip" data-v="talk" data-i="opt_talk"></button>
+    </div></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p data-i="foot1"></p>
+  <p style="margin-top:6px" data-i="foot2"></p>
+</div></footer>
+
+<div class="sendbar"><div class="wrap">
+  <span class="cnt"><b id="anscount">0</b> <span data-i="answered"></span></span>
+  <button class="btn ghost" id="copybtn" data-i="copy"></button>
+  <button class="btn wa" id="wabtn" data-i="send"></button>
+</div></div>
+
+<script>
+const I = {
+es: {
+  eyebrow:"Guía de renovación · Agosto 2026",
+  h1a:"Su casa, entendida", h1b:"antes de reformarla.",
+  lede:"Hemos escaneado la vivienda en 3D y analizado estructura, humedades y superficies. Esta guía interactiva le explica lo que vimos, le muestra opciones — y recoge sus respuestas y comentarios para preparar un presupuesto que acierte exactamente.",
+  livenote:"Documento vivo: sus respuestas y comentarios nos llegan directamente por WhatsApp con un clic.",
+  opentour:"Abrir el recorrido 3D en pantalla completa ↗",
+  tour_h:"Recorra su casa en 3D", tour_s:"Todo lo que comentamos aquí puede verlo usted misma en el recorrido — cada medida sale de este escaneo (precisión ±2 %).",
+  find_h:"Qué hemos visto", find_s:"Cuatro temas principales — dos ya conocidos de nuestra visita y dos que hemos detectado además en el escaneo. Puede comentar cada punto.",
+  t_crit:"Prioridad", t_new:"Detectado además",
+  f1h:"Humedad ascendente y juntas disgregadas", f1:"Bajo el edificio discurre un curso de agua. La humedad sube por los muros de mampostería: las juntas de la franja alta se disgregan y hay manchas. La zona baja ya fue revestida en el pasado — y el problema hoy es peor: la mejor prueba de que revestir solo no basta.",
+  f2h:"Viga rota, techo con pandeo y escalera fuera de norma", f2:"Una viga de la cubierta está rota y una zona del techo presenta pandeo; existen refuerzos de una intervención anterior. La escalera actual no cumple la normativa (CTE DB-SUA).",
+  f3h:"Fisuras en el techo de la cocina", f3:"En el techo de la cocina se aprecian fisuras finas. Las cartografiaremos en el diagnóstico para distinguir fisuras superficiales de posibles avisos estructurales.",
+  f4h:"Baño exterior con daños de humedad", f4:"En el pequeño baño/lavadero del patio hay pintura desconchada, manchas y moho — y el aseo está a la intemperie. Merece entrar en el plan.",
+  addc:"+ Añadir comentario",
+  damp_h:"La humedad, explicada con honestidad", damp_s:"Nos preguntó si basta con revestir también la parte alta. Lo hemos verificado a fondo con normativa (CTE DB-HS 1), literatura técnica y un estudio independiente (UPM/CSIC). La respuesta corta: revestir ayuda al confort — pero no cura.",
+  damp_q:"Un trasdosado sobre un muro húmedo es como un paraguas sobre una fuga en el suelo: la habitación parece seca, pero el agua sigue corriendo.",
+  damp_qw:"Conclusión de nuestra verificación técnica",
+  damp_call:"El punto crítico son las vigas de madera, que apoyan DENTRO del muro húmedo. Una ya ha fallado. Detrás de un revestimiento, ese proceso continuaría invisible. Por eso: primero sanear apoyos y cortar la causa — y después, con gusto, el acabado que usted elija (incluido un trasdosado ventilado).",
+  dp1:"Diagnóstico breve: medición de humedad y sales, 2–3 catas pequeñas en el revestimiento inferior existente y revisión de todos los apoyos de viga.",
+  dp2:"Cortar la causa: barrera horizontal contra la humedad ascendente en la base de los muros.",
+  dp3:"Restaurar de forma transpirable: juntas y revocos de cal, pintura mineral.",
+  dp4:"Después, la estética que usted elija: piedra vista restaurada o trasdosado blanco VENTILADO — ambas perfectamente viables una vez tratada la causa.",
+  q1:"¿Sabe cuándo y quién revistió la zona baja de los muros, y qué se instaló? ¿Conserva facturas, fotos o documentación?",
+  q2:"¿Nos autoriza a realizar 2–3 pequeñas catas de inspección (10×10 cm, se cierran sin dejar rastro)?",
+  q3:"¿Tiene información o documentos sobre el curso de agua? ¿La humedad es constante o aumenta tras la lluvia?",
+  q4:"¿Se hizo en el pasado algún tratamiento contra la humedad (inyecciones, drenaje, ventilación)?",
+  roof_h:"Nuestra recomendación: aislar la cubierta ahora", roof_s:"La cubierta no tiene aislamiento y el calor sube: en invierno se escapa por el tejado (calefacción cara), en verano entra. El momento ideal es ahora — con los trabajos de vigas en marcha, medios montados y la casa vacía. Ya viviendo dentro, sería mucho más molesto y caro.",
+  roof_call:"Dos vías: por el EXTERIOR (conserva el precioso techo de madera visto — ideal junto a la reparación de la cubierta) o por el INTERIOR (más económico, oculta parte del techo de madera).",
+  q5:"¿Incluimos el aislamiento de la cubierta como opción calculada?",
+  opt_roof_out:"Sí — por el exterior", opt_roof_in:"Sí — por el interior", opt_roof_info:"Cuéntenme más", opt_no:"No",
+  q6:"Los refuerzos metálicos existentes en las vigas: ¿cuándo y quién los ejecutó? ¿Hay documentación?",
+  q7:"¿De acuerdo en que un ingeniero estructural revise primero todas las vigas y apoyos, y después fijemos el alcance definitivo?",
+  opt_yes:"Sí, de acuerdo", opt_talk:"Hablémoslo",
+  stone_h:"Los muros de piedra: ¿qué dirección le gusta?", stone_s:"Ambas opciones son técnicamente correctas — una vez tratada la causa de la humedad. Toque la opción que prefiera.",
+  ist:"Estado actual", pick:"Elegir",
+  stone_a_t:"Piedra restaurada", sa1:"Rejuntado con mortero de cal, piedra vista", sa2:"Transpirable: lo ideal frente a la humedad", sa3:"Carácter y autenticidad",
+  stone_b_t:"Trasdosado blanco ventilado + LED", sb1:"Superficie serena y moderna, luz cálida indirecta", sb2:"Sistema VENTILADO con rejillas — la pared respira", sb3:"Solo tras tratar la causa; apoyos de viga registrables",
+  opt_mix:"Me interesa una combinación de A y B",
+  q9:"Si elige A: ¿acabado encalado blanco como ahora, o piedra en tono natural?",
+  opt_white:"Encalado blanco", opt_natural:"Tono natural",
+  viznote:"Imágenes: visualizaciones IA sobre su escaneo real — previsualización de diseño, no plano de ejecución.",
+  stairs_h:"La escalera: ¿qué dirección le gusta?", stairs_s:"Segura y conforme a normativa — sin renunciar al almacenaje.",
+  stairs_a_t:"Recta, como hoy pero segura", ta1:"Misma posición, huellas de roble más cómodas", ta2:"Barandilla continua de acero negro", ta3:"Todo el almacenaje se conserva",
+  stairs_b_t:"Escalera de caracol", tb1:"Libera espacio en planta", tb2:"Acero negro mate + roble", tb3:"Armario columna blanco como almacenaje",
+  q11:"¿Preferencias de material o estilo (blanco + roble como en las imágenes, u otras)?",
+  q12:"Para proponerle bien: ¿solución funcional o pieza de diseño?",
+  opt_func:"Funcional", opt_design:"Pieza de diseño",
+  extra_h:"Dos puntos que añadimos al plan", extra_s:"Detectados en el escaneo además de lo hablado en la visita.",
+  ex1h:"Fisuras en el techo de la cocina", ex1:"Las cartografiaremos en el diagnóstico. ¿Conoce más grietas (también en otras estancias)? ¿Desde cuándo?",
+  ex2h:"El baño/lavadero del patio", ex2:"Pintura desconchada, humedad y aseo a la intemperie. ¿Qué le gustaría hacer?",
+  opt_renovate:"Renovarlo bien", opt_repair:"Solo sanear/impermeabilizar", opt_advise:"Aconséjenme",
+  scope_h:"¿Está todo? Compruébelo", scope_s:"Esto es lo que ya está recogido en el plan. Si falta algo — dígalo aquí y entra directamente.",
+  ck1:"Diagnóstico de humedad + catas", ck2:"Revisión estructural de todas las vigas", ck3:"Refuerzo de viga rota y zona con pandeo", ck4:"Restauración/acabado de muros de piedra (A/B)", ck5:"Barrera contra humedad ascendente", ck6:"Sellado del desagüe", ck7:"Montaje de extractores de chimenea", ck8:"Escalera nueva conforme a norma (A/B)", ck9:"Fisuras techo cocina", ck10:"Baño exterior del patio",
+  q15:"¿Falta algo en esta lista? ¿Qué más le preocupa o le gustaría incluir?",
+  q16:"A partir de mediados de septiembre: ¿quién puede darnos acceso a la vivienda?",
+  q17:"¿Le parece bien que nuestro abogado presente la comunicación administrativa por usted (poder sencillo por firma electrónica)?",
+  q18:"Los extractores de la chimenea…", opt_ordered:"Están pedidos", opt_delivered:"Ya entregados", opt_unknown:"No lo sé",
+  q19:"¿Qué paneles de pared quería sustituir exactamente?",
+  q20:"¿Quiere que ofertemos también el repintado completo tras los trabajos?",
+  answered:"respuestas listas — envíelas cuando quiera",
+  copy:"Copiar respuestas", send:"Enviar por WhatsApp",
+  foot1:"Preparado personalmente para los propietarios de Calle de Belfast 17, Alicante · Agosto 2026.",
+  foot2:"¿Preguntas? Angelo · WhatsApp +49 174 201 0380 — respondemos el mismo día.",
+  wa_head:"Respuestas — Guía Casa Belfast 17"
+},
+en: {
+  eyebrow:"Renovation Guide · August 2026",
+  h1a:"Your house, understood", h1b:"before it's renovated.",
+  lede:"We scanned the home in 3D and analysed structure, humidity and surfaces. This interactive guide explains what we saw, shows you options — and collects your answers and comments so the final quotation hits exactly right.",
+  livenote:"A living document: your answers and comments reach us directly via WhatsApp with one click.",
+  opentour:"Open the 3D tour full screen ↗",
+  tour_h:"Walk through your house in 3D", tour_s:"Everything we discuss here you can verify yourself in the tour — every measurement comes from this scan (±2 % accuracy).",
+  find_h:"What we saw", find_s:"Four main topics — two known from our visit, two additionally detected in the scan. You can comment on each.",
+  t_crit:"Priority", t_new:"Additionally found",
+  f1h:"Rising damp & crumbling joints", f1:"A watercourse runs beneath the building. Moisture rises through the stone walls: the joints in the upper band crumble and stains show. The lower walls were already lined in the past — and the problem is worse today. Best proof that lining alone doesn't cure it.",
+  f2h:"Broken beam, sagging ceiling & non-compliant stairs", f2:"One roof beam is broken and a ceiling section sags; steel reinforcements from an earlier intervention exist. The current staircase doesn't meet building code (CTE DB-SUA).",
+  f3h:"Hairline cracks in the kitchen ceiling", f3:"Fine cracks show in the kitchen ceiling. We'll map them during the diagnosis to distinguish cosmetic cracks from structural warnings.",
+  f4h:"Outdoor bathroom with damp damage", f4:"The small patio bathroom/laundry shows peeling paint, stains and mould — and the WC sits outdoors. It deserves a place in the plan.",
+  addc:"+ Add a comment",
+  damp_h:"The humidity, explained honestly", damp_s:"You asked whether cladding the upper walls too would fix it. We verified this thoroughly against the building code (CTE DB-HS 1), technical literature and an independent university study (UPM/CSIC). Short answer: cladding helps comfort — it doesn't cure.",
+  damp_q:"Cladding a damp wall is like an umbrella over a leak in the floor: the room looks dry, but the water keeps flowing.",
+  damp_qw:"Conclusion of our technical verification",
+  damp_call:"The critical point are the timber beams bearing INSIDE the damp wall. One has already failed. Behind cladding, that process would continue invisibly. So: first repair the bearings and cut the cause — then, gladly, whichever finish you choose (including a ventilated dry-lining).",
+  dp1:"A short diagnosis: moisture & salt readings, 2–3 small inspection openings in the existing lower cladding, and a check of every beam bearing.",
+  dp2:"Cut the cause: a horizontal damp-proof barrier at the base of the walls.",
+  dp3:"Restore breathably: lime joints and renders, mineral paint.",
+  dp4:"Then the look YOU choose: restored exposed stone or a white VENTILATED dry-lining — both perfectly fine once the cause is treated.",
+  q1:"Do you know when and by whom the lower walls were lined, and what was installed? Any invoices, photos or documents?",
+  q2:"May we make 2–3 small inspection openings (10×10 cm, closed invisibly afterwards)?",
+  q3:"Any information or documents about the watercourse? Is the damp constant, or worse after rain?",
+  q4:"Were any damp treatments done in the past (injections, drainage, ventilation)?",
+  roof_h:"Our recommendation: insulate the roof now", roof_s:"The roof is uninsulated and heat rises: in winter it escapes through the roof (expensive heating), in summer it pours in. The ideal moment is now — beam works running, access equipment in place, house empty. Once you live inside, it gets far more disruptive and costly.",
+  roof_call:"Two routes: from OUTSIDE (preserves the beautiful visible timber ceiling — ideal together with the roof repairs) or from INSIDE (cheaper, hides part of the timber ceiling).",
+  q5:"Shall we include roof insulation as a calculated option?",
+  opt_roof_out:"Yes — from outside", opt_roof_in:"Yes — from inside", opt_roof_info:"Tell me more", opt_no:"No",
+  q6:"The existing steel reinforcements on the beams: when and by whom? Any documentation?",
+  q7:"Happy for a structural engineer to check all beams and bearings first, and to fix the final scope after that?",
+  opt_yes:"Yes, agreed", opt_talk:"Let's discuss",
+  stone_h:"The stone walls: which direction do you like?", stone_s:"Both options are technically sound — once the damp cause is treated. Tap your preference.",
+  ist:"Current state", pick:"Choose",
+  stone_a_t:"Restored natural stone", sa1:"Lime-mortar repointing, stone stays visible", sa2:"Breathable — ideal against the damp", sa3:"Character and authenticity",
+  stone_b_t:"White ventilated cladding + LED", sb1:"Calm modern surface, warm indirect light", sb2:"VENTILATED system with grilles — the wall keeps breathing", sb3:"Only after treating the cause; beam bearings stay inspectable",
+  opt_mix:"I'm interested in a mix of A and B",
+  q9:"If A: whitewashed as today, or natural stone tone?",
+  opt_white:"Whitewashed", opt_natural:"Natural tone",
+  viznote:"Images: AI visualizations based on your real scan — a design preview, not a construction drawing.",
+  stairs_h:"The staircase: which direction do you like?", stairs_s:"Safe and code-compliant — without giving up the storage.",
+  stairs_a_t:"Straight — like today, but safe", ta1:"Same position, more comfortable oak treads", ta2:"Continuous black steel handrail", ta3:"All storage underneath preserved",
+  stairs_b_t:"Spiral staircase", tb1:"Frees up floor space", tb2:"Matte black steel + oak", tb3:"Slim white column cabinet as storage",
+  q11:"Material or style preferences (white + oak as visualized, or something else)?",
+  q12:"So we propose well: functional solution or design statement?",
+  opt_func:"Functional", opt_design:"Design statement",
+  extra_h:"Two points we're adding to the plan", extra_s:"Detected in the scan on top of what we discussed on site.",
+  ex1h:"Kitchen ceiling cracks", ex1:"We'll map them during the diagnosis. Do you know of more cracks (other rooms too)? Since when?",
+  ex2h:"The patio bathroom/laundry", ex2:"Peeling paint, damp and an open-air WC. What would you like to do?",
+  opt_renovate:"Renovate properly", opt_repair:"Just repair/seal", opt_advise:"Advise me",
+  scope_h:"Is everything covered? Check it", scope_s:"This is what the plan already includes. If anything's missing — say it here and it goes straight in.",
+  ck1:"Damp diagnosis + inspection openings", ck2:"Structural check of all beams", ck3:"Reinforcing broken beam & sagging section", ck4:"Stone wall restoration/finish (A/B)", ck5:"Barrier against rising damp", ck6:"Drain re-sealing", ck7:"Chimney extraction fans installation", ck8:"New code-compliant staircase (A/B)", ck9:"Kitchen ceiling cracks", ck10:"Patio bathroom",
+  q15:"Is anything missing from this list? What else concerns you or should be included?",
+  q16:"From mid-September: who can give us access to the house?",
+  q17:"Happy for our lawyer to file the administrative notification for you (simple e-signature power of attorney)?",
+  q18:"The chimney extraction fans…", opt_ordered:"Ordered", opt_delivered:"Delivered", opt_unknown:"Not sure",
+  q19:"Which wall panels exactly did you want replaced?",
+  q20:"Shall we also quote the full repainting after the works?",
+  answered:"answers ready — send whenever you like",
+  copy:"Copy answers", send:"Send via WhatsApp",
+  foot1:"Prepared personally for the owners of Calle de Belfast 17, Alicante · August 2026.",
+  foot2:"Questions? Angelo · WhatsApp +49 174 201 0380 — we answer the same day.",
+  wa_head:"Answers — Casa Belfast 17 Guide"
+},
+de: {
+  eyebrow:"Renovierungs-Guide · August 2026",
+  h1a:"Ihr Haus, verstanden —", h1b:"bevor saniert wird.",
+  lede:"Wir haben das Haus in 3D gescannt und Statik, Feuchtigkeit und Oberflächen analysiert. Dieser interaktive Guide erklärt, was wir gesehen haben, zeigt Optionen — und sammelt Ihre Antworten und Kommentare, damit das finale Angebot exakt trifft.",
+  livenote:"Ein lebendes Dokument: Ihre Antworten und Kommentare erreichen uns mit einem Klick per WhatsApp.",
+  opentour:"3D-Rundgang im Vollbild öffnen ↗",
+  tour_h:"Gehen Sie in 3D durch Ihr Haus", tour_s:"Alles, was wir hier besprechen, können Sie selbst im Rundgang prüfen — jedes Maß stammt aus diesem Scan (±2 % Genauigkeit).",
+  find_h:"Was wir gesehen haben", find_s:"Vier Hauptthemen — zwei aus unserem Termin bekannt, zwei zusätzlich im Scan entdeckt. Jeder Punkt ist kommentierbar.",
+  t_crit:"Priorität", t_new:"Zusätzlich entdeckt",
+  f1h:"Aufsteigende Feuchte & bröckelnde Fugen", f1:"Unter dem Gebäude verläuft ein Wasserlauf. Die Feuchte steigt in den Steinwänden auf: Die Fugen im oberen Band bröckeln, Flecken sind sichtbar. Unten wurde früher bereits verkleidet — und das Problem ist heute schlimmer. Der beste Beweis, dass Verkleiden allein nicht heilt.",
+  f2h:"Gebrochener Balken, Durchhang & Treppe ohne Norm", f2:"Ein Dachbalken ist gebrochen, eine Deckenpartie hängt durch; Stahl-Verstärkungen aus früherer Zeit sind vorhanden. Die Treppe entspricht nicht der Bauvorschrift (CTE DB-SUA).",
+  f3h:"Haarrisse in der Küchendecke", f3:"In der Küchendecke zeigen sich feine Risse. Wir kartieren sie in der Diagnose, um kosmetische Risse von strukturellen Warnzeichen zu unterscheiden.",
+  f4h:"Außenbad mit Feuchteschäden", f4:"Das kleine Patio-Bad (mit Waschküche) zeigt abblätternde Farbe, Flecken und Schimmel — und das WC liegt im Freien. Das gehört mit in den Plan.",
+  addc:"+ Kommentar hinzufügen",
+  damp_h:"Die Feuchtigkeit — ehrlich erklärt", damp_s:"Sie fragten, ob es reicht, auch oben zu verkleiden. Wir haben das gründlich geprüft — gegen Baunorm (CTE DB-HS 1), Fachliteratur und eine unabhängige Universitätsstudie (UPM/CSIC). Kurzantwort: Verkleiden hilft dem Komfort — es heilt nicht.",
+  damp_q:"Eine Verkleidung auf feuchter Wand ist wie ein Regenschirm über einem Leck im Boden: Der Raum wirkt trocken, aber das Wasser fließt weiter.",
+  damp_qw:"Ergebnis unserer technischen Verifikation",
+  damp_call:"Der kritische Punkt sind die Holzbalken, die IN der feuchten Wand aufliegen. Einer ist bereits gebrochen. Hinter einer Verkleidung liefe dieser Prozess unsichtbar weiter. Darum: erst Auflager sanieren und Ursache kappen — danach gern die Optik Ihrer Wahl (auch eine hinterlüftete Vorsatzschale).",
+  dp1:"Kurze Diagnose: Feuchte- und Salzmessung, 2–3 kleine Öffnungen in der unteren Bestandsverkleidung, Prüfung aller Balkenauflager.",
+  dp2:"Ursache kappen: Horizontalsperre gegen aufsteigende Feuchte am Wandfuß.",
+  dp3:"Diffusionsoffen instand setzen: Kalkfugen und -putze, mineralische Farbe.",
+  dp4:"Danach die Optik, die SIE wählen: restaurierter Sichtstein oder weiße HINTERLÜFTETE Vorsatzschale — beides nach Ursachenbehandlung völlig in Ordnung.",
+  q1:"Wissen Sie, wann und von wem der untere Wandbereich verkleidet wurde und was verbaut ist? Gibt es Rechnungen, Fotos, Unterlagen?",
+  q2:"Dürfen wir 2–3 kleine Inspektionsöffnungen machen (10×10 cm, werden spurlos verschlossen)?",
+  q3:"Gibt es Informationen oder Unterlagen zum Wasserlauf? Ist die Feuchte konstant oder nach Regen stärker?",
+  q4:"Gab es früher Feuchte-Maßnahmen (Injektionen, Drainage, Lüftung)?",
+  roof_h:"Unsere Empfehlung: das Dach jetzt dämmen", roof_s:"Das Dach ist ungedämmt, Wärme steigt nach oben: Im Winter entweicht sie durchs Dach (teure Heizung), im Sommer kommt sie herein. Der ideale Moment ist jetzt — Balkenarbeiten laufen, Gerüst steht, Haus leer. Im bewohnten Zustand wird es deutlich aufwendiger und teurer.",
+  roof_call:"Zwei Wege: von AUSSEN (erhält die schöne sichtbare Holzdecke — ideal zusammen mit den Dacharbeiten) oder von INNEN (günstiger, verdeckt einen Teil der Holzdecke).",
+  q5:"Sollen wir die Dachdämmung als kalkulierte Option aufnehmen?",
+  opt_roof_out:"Ja — von außen", opt_roof_in:"Ja — von innen", opt_roof_info:"Erzählen Sie mir mehr", opt_no:"Nein",
+  q6:"Die vorhandenen Stahl-Verstärkungen an den Balken: wann und von wem? Gibt es Unterlagen?",
+  q7:"Einverstanden, dass zuerst ein Statiker alle Balken und Auflager prüft und der finale Umfang danach festgelegt wird?",
+  opt_yes:"Ja, einverstanden", opt_talk:"Lassen Sie uns sprechen",
+  stone_h:"Die Steinwände: Welche Richtung gefällt Ihnen?", stone_s:"Beide Optionen sind technisch sauber — sobald die Feuchte-Ursache behandelt ist. Tippen Sie Ihre Präferenz an.",
+  ist:"Ist-Zustand", pick:"Wählen",
+  stone_a_t:"Restaurierter Naturstein", sa1:"Kalkmörtel-Neuverfugung, Stein bleibt sichtbar", sa2:"Atmungsaktiv — ideal bei Feuchtigkeit", sa3:"Charakter und Authentizität",
+  stone_b_t:"Weiße hinterlüftete Verkleidung + LED", sb1:"Ruhige moderne Fläche, warmes indirektes Licht", sb2:"HINTERLÜFTETES System mit Gittern — die Wand atmet", sb3:"Erst nach Ursachenbehandlung; Balkenauflager bleiben prüfbar",
+  opt_mix:"Mich interessiert eine Kombination aus A und B",
+  q9:"Falls A: kalkweiß wie heute, oder Naturstein-Ton?",
+  opt_white:"Kalkweiß", opt_natural:"Naturton",
+  viznote:"Bilder: KI-Visualisierungen auf Basis Ihres echten Scans — Design-Vorschau, kein Ausführungsplan.",
+  stairs_h:"Die Treppe: Welche Richtung gefällt Ihnen?", stairs_s:"Sicher und normgerecht — ohne den Stauraum aufzugeben.",
+  stairs_a_t:"Gerade — wie heute, aber sicher", ta1:"Gleiche Position, komfortablere Eichenstufen", ta2:"Durchgehendes schwarzes Stahlgeländer", ta3:"Gesamter Stauraum bleibt erhalten",
+  stairs_b_t:"Wendeltreppe", tb1:"Gewinnt Grundfläche", tb2:"Mattschwarzer Stahl + Eiche", tb3:"Schlanker weißer Schrank als Stauraum",
+  q11:"Material- oder Stilwünsche (Weiß + Eiche wie visualisiert, oder anders)?",
+  q12:"Damit wir passend vorschlagen: Funktionslösung oder Design-Statement?",
+  opt_func:"Funktional", opt_design:"Design-Statement",
+  extra_h:"Zwei Punkte, die wir in den Plan aufnehmen", extra_s:"Im Scan entdeckt — zusätzlich zum Besprochenen.",
+  ex1h:"Risse in der Küchendecke", ex1:"Wir kartieren sie in der Diagnose. Kennen Sie weitere Risse (auch andere Räume)? Seit wann?",
+  ex2h:"Das Patio-Bad / die Waschküche", ex2:"Abblätternde Farbe, Feuchte, WC im Freien. Was möchten Sie hier?",
+  opt_renovate:"Richtig renovieren", opt_repair:"Nur sanieren/abdichten", opt_advise:"Beraten Sie mich",
+  scope_h:"Ist alles erfasst? Prüfen Sie es", scope_s:"Das ist bereits im Plan. Falls etwas fehlt — hier hineinschreiben, es geht direkt ein.",
+  ck1:"Feuchte-Diagnose + Öffnungen", ck2:"Statik-Prüfung aller Balken", ck3:"Verstärkung gebrochener Balken & Durchhang", ck4:"Steinwand-Restaurierung/Finish (A/B)", ck5:"Sperre gegen aufsteigende Feuchte", ck6:"Abfluss-Abdichtung", ck7:"Montage Kamin-Absaugung", ck8:"Neue normgerechte Treppe (A/B)", ck9:"Risse Küchendecke", ck10:"Patio-Bad",
+  q15:"Fehlt etwas auf dieser Liste? Was beschäftigt Sie noch oder soll mit hinein?",
+  q16:"Ab Mitte September: Wer kann uns Zugang zum Haus geben?",
+  q17:"Einverstanden, dass unser Anwalt die Behördenmeldung für Sie einreicht (einfache Vollmacht per E-Signatur)?",
+  q18:"Die Kamin-Absaugventilatoren…", opt_ordered:"Bestellt", opt_delivered:"Geliefert", opt_unknown:"Weiß ich nicht",
+  q19:"Welche Wandpaneele wollten Sie genau ersetzen?",
+  q20:"Sollen wir den Komplett-Anstrich nach den Arbeiten gleich mit anbieten?",
+  answered:"Antworten bereit — senden Sie, wann Sie möchten",
+  copy:"Antworten kopieren", send:"Per WhatsApp senden",
+  foot1:"Persönlich vorbereitet für die Eigentümer der Calle de Belfast 17, Alicante · August 2026.",
+  foot2:"Fragen? Angelo · WhatsApp +49 174 201 0380 — wir antworten am selben Tag.",
+  wa_head:"Antworten — Guide Casa Belfast 17"
+}
+};
+
+const S = { lang: localStorage.getItem('cb17_lang') || 'en' };
+const store = k => localStorage.getItem('cb17_' + k) || '';
+const save = (k, v) => localStorage.setItem('cb17_' + k, v);
+
+function applyLang() {
+  const t = I[S.lang];
+  document.documentElement.lang = S.lang;
+  document.querySelectorAll('[data-i]').forEach(el => { const k = el.getAttribute('data-i'); if (t[k] !== undefined) el.textContent = t[k]; });
+  document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b.dataset.lang === S.lang));
+  updateCount();
+}
+document.querySelectorAll('.langs button').forEach(b => b.addEventListener('click', () => { S.lang = b.dataset.lang; localStorage.setItem('cb17_lang', S.lang); applyLang(); }));
+
+// textareas
+document.querySelectorAll('[data-store]').forEach(el => {
+  el.value = store(el.getAttribute('data-store'));
+  el.addEventListener('input', () => { save(el.getAttribute('data-store'), el.value); updateCount(); });
+});
+// comment toggles
+document.querySelectorAll('.comment-btn').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.c).classList.toggle('open')));
+// radios (chips + option cards)
+document.querySelectorAll('[data-radio]').forEach(group => {
+  const key = group.getAttribute('data-radio');
+  const items = group.querySelectorAll('[data-v]');
+  const cls = group.classList.contains('opts') ? 'sel' : 'on';
+  const stored = store(key);
+  items.forEach(it => {
+    if (it.dataset.v === stored) it.classList.add(cls);
+    it.addEventListener('click', () => {
+      const was = it.classList.contains(cls);
+      items.forEach(o => o.classList.remove(cls));
+      if (!was) { it.classList.add(cls); save(key, it.dataset.v); } else { save(key, ''); }
+      updateCount();
+    });
+  });
+});
+
+const KEYS = ['q1','q2','q3','q4','q5','q6','q7','q8','q8b','q9','q10','q11','q12','q13','q14','q15','q16','q17','q18','q19','q20'];
+const CKEYS = ['c_f1','c_f2','c_f3','c_f4','c_stone'];
+function updateCount() {
+  const n = KEYS.filter(k => store(k).trim() !== '').length;
+  document.getElementById('anscount').textContent = n;
+}
+function compile() {
+  const t = I[S.lang];
+  let out = t.wa_head + '\n';
+  KEYS.forEach(k => { const v = store(k).trim(); if (v) out += '\n' + k.toUpperCase() + ': ' + v; });
+  CKEYS.forEach(k => { const v = store(k).trim(); if (v) out += '\n[' + k + ']: ' + v; });
+  return out;
+}
+document.getElementById('wabtn').addEventListener('click', () => {
+  window.open('https://wa.me/491742010380?text=' + encodeURIComponent(compile()), '_blank');
+});
+document.getElementById('copybtn').addEventListener('click', async () => {
+  await navigator.clipboard.writeText(compile());
+  document.getElementById('copybtn').textContent = '✓';
+  setTimeout(applyLang, 1200);
+});
+
+// reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }), { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+applyLang();
+</script>
+</body>
+</html>
