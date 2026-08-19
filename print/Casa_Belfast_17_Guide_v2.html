@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:14mm 14mm 16mm 14mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Archivo',Helvetica,Arial,sans-serif;color:#26221b;font-size:10.2pt;line-height:1.5;background:#fff}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif}
+.hdr{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #26221b;padding-bottom:3mm;margin-bottom:8mm}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:13pt}.brand em{color:#a8763e;font-style:normal}
+.kick{font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:#a8763e;font-weight:700}
+h1{font-size:24pt;line-height:1.1;font-weight:700}h1 span{color:#a8763e}
+.lede{color:#5c554a;margin:4mm 0 5mm;max-width:150mm}
+.howto{border:1.5px solid #d9cfbc;background:#fffdf9;border-radius:3mm;padding:3.5mm 4.5mm;font-size:9.2pt}
+.v2{border:1.5px solid #a8763e;background:#f7f1e6;border-radius:3mm;padding:3.5mm 4.5mm;font-size:9.2pt;margin-top:4mm}
+.v2 b{color:#8a5f2e}
+hr.sep{border:0;border-top:1px solid #d9cfbc;margin:7mm 0 5mm}
+.num{font-family:'Fraunces',serif;color:#a8763e;font-size:9pt;letter-spacing:.14em;font-weight:600}
+h2{font-size:17pt;font-weight:700;margin:1mm 0 2.5mm}
+.sub{color:#5c554a;margin-bottom:4mm;max-width:150mm}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:4mm}
+.card{border:1.5px solid #d9cfbc;border-radius:3mm;overflow:hidden;background:#fffdf9;break-inside:avoid}
+.card img{width:100%;height:38mm;object-fit:cover;display:block}
+.card .pad{padding:3mm 4mm 3.5mm}
+.tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.6mm 2.6mm;border-radius:99px;background:#efe7d8;color:#8a5f2e;margin-bottom:1.5mm}
+.tag.crit{background:#f3ded5;color:#a04b2f}.tag.new{background:#e4ecdf;color:#4d6b4f}
+.card h3{font-size:11pt;margin-bottom:1mm}.card p{font-size:9pt;color:#5c554a}
+.quote{background:#26221b;color:#f6f1e7;border-radius:3mm;padding:5mm 6mm;font-family:'Fraunces',serif;font-size:12pt;line-height:1.4;margin:4mm 0}
+.quote small{display:block;font-family:'Archivo',sans-serif;font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:#b7ac99;margin-top:2.5mm}
+.call{background:#efe7d8;border-left:3px solid #a8763e;border-radius:0 2.5mm 2.5mm 0;padding:3mm 4.5mm;margin:3mm 0;font-size:9.4pt}
+.call.risk{background:#f7e9e2;border-left-color:#a04b2f}
+ol.steps{margin:3mm 0 3mm 6mm}ol.steps li{margin-bottom:1.5mm}
+.q{border:1.5px solid #d9cfbc;border-radius:3mm;padding:3.2mm 4.2mm;margin:0 0 3.5mm;background:#fffdf9;break-inside:avoid}
+.q .qt{font-weight:700;margin-bottom:2mm}.q .qn{color:#a8763e;font-family:'Fraunces',serif;margin-right:2mm}
+.lines div{border-bottom:1px solid #d9cfbc;height:6.5mm}
+.opts{display:flex;flex-wrap:wrap;gap:2mm 7mm;margin-top:1mm}
+.cb{display:inline-flex;align-items:center;gap:2mm;font-size:9.2pt}
+.cb:before{content:"";width:3.6mm;height:3.6mm;border:1.4px solid #26221b;border-radius:.8mm;display:inline-block}
+.opt{border:1.5px solid #d9cfbc;border-radius:3mm;overflow:hidden;break-inside:avoid}
+.opt img{width:100%;height:46mm;object-fit:cover;display:block}
+.opt .oh{background:#26221b;color:#f6f1e7;padding:2.5mm 4mm;font-weight:700;font-size:9.6pt}.opt .oh b{color:#a8763e;margin-right:2mm;font-family:'Fraunces',serif}
+.opt ul{list-style:none;padding:2.5mm 4mm 3mm}.opt li{font-size:8.8pt;color:#5c554a;padding-left:4.5mm;position:relative;margin-bottom:1mm}
+.opt li:before{content:"✓";color:#a8763e;position:absolute;left:0;font-weight:700}
+.opt .pick{padding:0 4mm 3mm;font-weight:700;font-size:9pt}
+.ist{display:flex;align-items:center;gap:3.5mm;margin-bottom:3.5mm}.ist img{width:26mm;height:19mm;object-fit:cover;border-radius:2mm;border:1px solid #d9cfbc}.ist span{font-size:8.8pt;color:#5c554a;font-style:italic}
+.note{font-size:8pt;color:#5c554a;font-style:italic;margin:1.5mm 0 3mm}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;margin-bottom:3mm}
+.idea{border:1.5px solid #d9cfbc;border-radius:3mm;padding:2.6mm 3.2mm;background:#fffdf9;break-inside:avoid}
+.idea h3{font-size:9.6pt;margin-bottom:.8mm}.idea p{font-size:8pt;color:#5c554a;margin-bottom:1.6mm;line-height:1.4}
+.ck{display:grid;grid-template-columns:1fr 1fr;gap:2.2mm;margin-bottom:4mm}
+.ci{border:1.5px solid #d9cfbc;border-radius:2mm;padding:2mm 3.2mm;font-size:9pt;background:#fffdf9}.ci:before{content:"✓ ";color:#4d6b4f;font-weight:700}
+.ci.new{border-color:#4d6b4f}
+.ph{list-style:none}.ph li{margin-bottom:2mm}
+.done{background:#26221b;color:#f6f1e7;border-radius:3mm;padding:4.5mm 6mm;margin-top:4mm}
+.done h3{font-size:14pt;margin-bottom:2mm}.done b{color:#a8763e}
+.foot{font-size:7.6pt;color:#5c554a;margin-top:4mm;line-height:1.35}
+.pb{break-before:page}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin:3mm 0}
+.strip figure{break-inside:avoid}.strip img{width:100%;height:30mm;object-fit:cover;border-radius:2mm;border:1px solid #d9cfbc;display:block}
+.strip figcaption{font-size:7.6pt;color:#5c554a;margin-top:1mm;line-height:1.3}
+.opt3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;margin:3mm 0}
+.opt3 .opt img{height:30mm}.opt3 .oh{font-size:8.6pt;padding:2mm 3mm}.opt3 li{font-size:8pt}.opt3 .pick{font-size:8.4pt}
+</style></head><body>
+
+<div class="hdr"><div class="brand">Casa <em>Belfast 17</em></div><div class="kick">Renovation Guide · v2 · 19 August 2026</div></div>
+<h1>Your house, understood<br><span>before it's renovated.</span></h1>
+<p class="lede">We scanned the home in 3D and analysed structure, humidity and surfaces. This guide explains what we saw, shows you options — and collects your answers and comments so the final quotation hits exactly right.</p>
+<div class="howto"><b>How to answer:</b> tick the boxes and write directly on these pages, then photograph or scan them and send everything to Angelo via WhatsApp — <b>+49 174 201 0380</b>. You can answer partially and send the rest later.</div>
+<div class="v2"><b>What's new in v2 (after your feedback of 19 August):</b> the kitchen water damage is now a full item — leaking stone-sink joints, the damaged cabinet below, and how we protect your quartz worktop during the works (section 08 and Q21). The roof-insulation text was clarified. Everything else is unchanged; if you already filled in pages of v1, you don't need to redo them.</div>
+
+<hr class="sep">
+<div class="num">01</div><h2>Walk through your house in 3D</h2>
+<p class="sub">Everything we discuss here you can verify yourself in the tour — every measurement comes from this scan (±2 % accuracy).</p>
+<p>Open the 3D tour on your phone or computer: <b><a href="https://my.matterport.com/show/?m=vXJpRRoEgse" style="color:#26221b">my.matterport.com/show/?m=vXJpRRoEgse</a></b></p>
+
+<hr class="sep">
+<div class="num">02</div><h2>What we saw</h2>
+<p class="sub">Four main topics — two known from our visit, two additionally detected in the scan. Use the note lines to comment on any point.</p>
+<div class="grid2">
+ <div class="card"><img src="../assets/stein_ist.jpg"><div class="pad"><span class="tag crit">Priority</span><h3>Rising damp &amp; crumbling joints</h3><p>A watercourse is believed to run beneath the building. Moisture rises through the stone walls: the joints in the upper band crumble and stains show. The lower walls were already lined in the past — and the problem is worse today. Best proof that lining alone doesn't cure it.</p></div></div>
+ <div class="card"><img src="../assets/treppe_ist.jpg"><div class="pad"><span class="tag crit">Priority</span><h3>Broken beam, sagging ceiling &amp; non-compliant stairs</h3><p>One roof beam is broken and a ceiling section sags; steel reinforcements from an earlier intervention exist. The current staircase doesn't meet building code (CTE DB-SUA).</p></div></div>
+ <div class="card"><img src="../assets/kueche_decke.jpg"><div class="pad"><span class="tag">Additionally found</span><h3>Hairline cracks in the kitchen ceiling</h3><p>Fine cracks show in the kitchen ceiling. We'll map them during the diagnosis to distinguish cosmetic cracks from structural warnings.</p></div></div>
+ <div class="card"><img src="../assets/bad_schaden.jpg"><div class="pad"><span class="tag">Additionally found</span><h3>Outdoor bathroom with damp damage</h3><p>The small patio bathroom/laundry shows peeling paint, stains and mould — and the WC sits outdoors. It deserves a place in the plan.</p></div></div>
+</div>
+
+<div class="pb"></div>
+<div class="num">03</div><h2>The humidity, explained honestly</h2>
+<p class="sub">You asked whether cladding the upper walls too would fix it. We checked this against the building code (CTE DB-HS 1), technical literature and an independent university study (UPM/CSIC). Short answer: cladding helps comfort — it doesn't cure.</p>
+<div class="quote">„Cladding a damp wall is like an umbrella over a leak in the floor: the room looks dry, but the water keeps flowing."<small>Conclusion of our technical verification</small></div>
+<div class="call">The critical point are the timber beams bearing <b>inside</b> the damp wall. One has already failed. Behind cladding, that process would continue invisibly. So: first have the bearings assessed and cut the cause — then, gladly, whichever finish you choose (including a ventilated dry-lining).</div>
+<ol class="steps">
+ <li>A short diagnosis: moisture &amp; salt readings, 2–3 small inspection openings in the existing lower cladding, and a check of every beam bearing.</li>
+ <li>Cut the cause: the measure follows the diagnosis — typically a horizontal damp-proof barrier at the base of the walls.</li>
+ <li>Restore breathably: lime joints and renders, mineral paint.</li>
+ <li>Then the look <b>you</b> choose: restored exposed stone or a white <b>ventilated</b> dry-lining — both fine once the cause is treated.</li>
+</ol>
+<div class="call"><b>Good to know — how your walls dry:</b> thick stone walls that have stored water for years dry slowly after the cause is cut — many months, sometimes years, most of it in the first year or two; the Alicante climate helps. As they dry, salts travel to the surface: a ‚sacrificial' lime plaster catches them and is renewed when needed, like changing a dressing. Sandblasting, high pressure and acids are off-limits for your stone — cleaning is done gently. That's why the final finish is chosen later, from real sample areas.</div>
+<div class="q"><div class="qt"><span class="qn">Q1</span>Do you know when and by whom the lower walls were lined, and what was installed? Any invoices, photos or documents?</div><div class="lines"><div></div><div></div><div></div><div></div></div></div>
+<div class="q"><div class="qt"><span class="qn">Q2</span>May we make 2–3 small inspection openings (10×10 cm, closed invisibly afterwards)?</div><div class="opts"><span class="cb">Yes, agreed</span><span class="cb">Let's discuss</span></div></div>
+<div class="q"><div class="qt"><span class="qn">Q3</span>Any information or documents about the watercourse? Is the damp constant, or worse after rain?</div><div class="lines"><div></div><div></div><div></div></div></div>
+<div class="q"><div class="qt"><span class="qn">Q4</span>Were any damp treatments done in the past (injections, drainage, ventilation)?</div><div class="lines"><div></div><div></div><div></div></div></div>
+
+<hr class="sep">
+<div class="num">04</div><h2>Roof insulation — worth deciding with the structural survey</h2>
+<p class="sub">The roof is uninsulated: in winter heat escapes straight through it (expensive heating), in summer it pours in. Being honest: <b>which</b> insulation route makes sense depends on the structural survey and the roof build-up. Only if the roof covering has to be opened anyway is insulating from above the ideal moment (it preserves the visible timber ceiling). If the roof stays closed, there are interior options — with compromises on the visible timber ceiling and room height. After the engineer's check we present the sensible option(s) with numbers; the decision comes then, not now.</p>
+<div class="call">Our promise: no overengineering. We will only propose insulation in the variant the structural survey actually allows — with costs and estimated savings, so you can decide calmly.</div>
+<div class="q"><div class="qt"><span class="qn">Q5</span>After the structural survey, shall we present the viable insulation option with numbers?</div><div class="opts"><span class="cb">Yes, present it</span><span class="cb">Tell me more</span><span class="cb">No</span></div></div>
+<div class="q"><div class="qt"><span class="qn">Q6</span>The existing steel reinforcements on the beams: when and by whom? Any documentation?</div><div class="lines"><div></div><div></div></div></div>
+<div class="q"><div class="qt"><span class="qn">Q7</span>Happy for a structural engineer to check all beams and bearings first, and to fix the final scope after that?</div><div class="opts"><span class="cb">Yes, agreed</span><span class="cb">Let's discuss</span></div></div>
+
+<div class="pb"></div>
+<div class="num">05</div><h2>The stone walls: which direction do you like?</h2>
+<p class="sub">Both options are technically sound — once the damp cause is treated. Tick your preference.</p>
+<div class="ist"><img src="../assets/stein_ist.jpg"><span>Current state</span></div>
+<div class="grid2">
+ <div class="opt"><img src="../assets/stein_a.jpg"><div class="oh"><b>A</b>Restored natural stone</div><ul><li>Lime-mortar repointing, stone stays visible</li><li>Breathable — ideal against the damp</li><li>Character and authenticity</li></ul><div class="pick"><span class="cb">I choose A</span></div></div>
+ <div class="opt"><img src="../assets/stein_b.jpg"><div class="oh"><b>B</b>White ventilated cladding + LED</div><ul><li>Calm modern surface, warm indirect light</li><li>Ventilated system with grilles — the wall keeps breathing</li><li>Only after treating the cause; beam bearings stay inspectable</li></ul><div class="pick"><span class="cb">I choose B</span></div></div>
+</div>
+<p><span class="cb">I'm interested in a mix of A and B</span></p>
+<p class="note">Images: AI visualizations based on your real scan — a design preview, not a construction drawing.</p>
+<div class="q"><div class="qt"><span class="qn">Q9</span>If A — the finish (whitewash or natural stone) is best decided <b>after</b> drying and a cleaning test: only then can you see how the stone truly looks, and lime-washing later is always possible and cheap. Which way do you lean today?</div><div class="opts"><span class="cb">Decide after sample areas (recommended)</span><span class="cb">Whitewashed</span><span class="cb">Natural tone</span></div></div>
+
+<hr class="sep">
+<div class="num">06</div><h2>The staircase: which direction do you like?</h2>
+<p class="sub">Safe and code-compliant — without giving up the storage.</p>
+<div class="ist"><img src="../assets/treppe_ist.jpg"><span>Current state</span></div>
+<div class="grid2">
+ <div class="opt"><img src="../assets/treppe_a.jpg"><div class="oh"><b>A</b>Straight — like today, but safe</div><ul><li>Same position, more comfortable oak treads</li><li>Continuous black steel handrail</li><li>All storage underneath preserved</li></ul><div class="pick"><span class="cb">I choose A</span></div></div>
+ <div class="opt"><img src="../assets/treppe_b.jpg"><div class="oh"><b>B</b>Spiral staircase</div><ul><li>Frees up floor space</li><li>Matte black steel + oak</li><li>Slim white column cabinet as storage</li></ul><div class="pick"><span class="cb">I choose B</span></div></div>
+</div>
+<p class="note">Images: AI visualizations based on your real scan — a design preview, not a construction drawing.</p>
+<div class="q"><div class="qt"><span class="qn">Q11</span>Material or style preferences (white + oak as visualized, or something else)?</div><div class="lines"><div></div><div></div></div></div>
+<div class="q"><div class="qt"><span class="qn">Q12</span>So we propose well: functional solution or design statement?</div><div class="opts"><span class="cb">Functional</span><span class="cb">Design statement</span></div></div>
+
+<div class="pb"></div>
+<div class="num">07</div><h2>Ideas to add with a tick</h2>
+<p class="sub">Creative consulting: things that are far easier and cheaper <b>now</b> — scaffolding up, walls open — than later. Tick whatever inspires you; we'll calculate it as an option.</p>
+<div class="grid3">
+ <div class="idea"><h3>Indirect lighting package</h3><p>Warm hidden LED bands (2700 K) along the purlin and the gallery edge, dimmable with scenes — the option-B atmosphere, across the whole house.</p><span class="cb">Add to my plan</span></div>
+ <div class="idea"><h3>Handrail light line</h3><p>LED integrated into the new staircase handrail: elegant, safe night-time orientation.</p><span class="cb">Add to my plan</span></div>
+ <div class="idea"><h3>Warmth for February</h3><p>Efficient heat-pump splits (heat in winter, cool in summer), sized after the insulation decision; optional electric floor tempering in the bathroom.</p><span class="cb">Add to my plan</span></div>
+ <div class="idea"><h3>Permanently healthy climate</h3><p>Controlled ventilation with gentle dehumidification: constant fresh air that also keeps your freshly restored walls dry.</p><span class="cb">Add to my plan</span></div>
+ <div class="idea"><h3>The patio as an extra room</h3><p>Bioclimatic pergola and an outdoor kitchen around the existing BBQ: the patio becomes your second living room, 9 months a year.</p><span class="cb">Add to my plan</span></div>
+ <div class="idea"><h3>Smart home basics</h3><p>Light scenes, presence, blinds: the wiring happens <b>now</b> while walls are open — later it gets expensive.</p><span class="cb">Add to my plan</span></div>
+</div>
+
+<hr class="sep">
+<div class="num">08</div><h2>Kitchen &amp; bathroom — three points in the plan</h2>
+<p class="sub">Two detected in the scan, one you raised on 19 August with your photos — thank you, it's now a full item.</p>
+<div class="grid2">
+ <div class="card"><img src="../assets/kueche_decke.jpg"><div class="pad"><h3>Kitchen ceiling cracks</h3><p>We'll map them during the diagnosis. Do you know of more cracks (other rooms too)? Since when?</p>
+  <div style="margin-top:2mm"><span class="qn" style="color:#a8763e;font-family:'Fraunces',serif;font-weight:700">Q13</span><div class="lines"><div></div><div></div></div></div></div></div>
+ <div class="card"><img src="../assets/patio_bad.jpg"><div class="pad"><h3>The patio bathroom/laundry</h3><p>Peeling paint, damp and an open-air WC. What would you like to do?</p>
+  <div style="margin-top:2mm"><span style="color:#a8763e;font-family:'Fraunces',serif;font-weight:700">Q14</span><div class="opts"><span class="cb">Renovate properly</span><span class="cb">Just repair/seal</span><span class="cb">Advise me</span></div></div></div></div>
+</div>
+<div class="pb"></div>
+<div class="card"><div class="pad"><span class="tag new">New in v2 · from your photos of 19 August</span><h3>Kitchen sink &amp; cabinet — water damage</h3>
+<div class="strip">
+ <figure><img src="../assets/kueche_spuele.jpg"><figcaption>Integrated stone sink — built from several slabs</figcaption></figure>
+ <figure><img src="../assets/kueche_fuge.jpg"><figcaption>Joints unsealed — brown water marks</figcaption></figure>
+ <figure><img src="../assets/kueche_schrank.jpg"><figcaption>Cabinet board swollen and cracked</figcaption></figure>
+ <figure><img src="../assets/kueche_unterseite.jpg"><figcaption>Support board &amp; batten stained from below</figcaption></figure>
+</div>
+<p><b>What your photos show:</b> water has been seeping through the unsealed slab joints for a while — the board at the base of the cabinet is swollen and cracked, and the support board and batten under the worktop are stained.</p>
+<p style="margin-top:2mm"><b>What we'll include:</b> a properly sealed sink (see the three options below), replacement of the water-damaged cabinet under the sink, drying and checking of the board and batten, and a check of the pipework as a possible second source while everything is open. Because the ingress is still active, we suggest treating this in Phase 1. In the meantime: keep the cabinet dry and avoid water standing in the sink corners.</p>
+<div class="call risk" style="margin-top:3mm"><b>Your question about the quartz — answered now, not later.</b> Quartz (engineered stone) is strong in daily use but brittle when cut in place or when a slab loses its support — and a sink cut-out is the weakest zone of any worktop. So we plan for it: before any cabinet work the worktop is temporarily supported on a frame; the basin is cut by a stone specialist with wet tools, never freehand; and we check for existing hairline cracks first. And we price the worst case <b>up front</b>: if the slab should crack despite these precautions, the fallback (replacing this worktop section in matching material) will be in the quotation as a fixed contingency that you only pay if it actually happens — no surprises later. Option C below avoids the cutting risk entirely.</div>
+</div></div>
+<h3 style="margin:4mm 0 1mm;font-size:12pt">Three ways to fix the sink — which do you prefer?</h3>
+<div class="opt3">
+ <div class="opt"><img src="../assets/kueche_opt_a.jpg"><div class="oh"><b>A</b>Stainless-steel sink</div><ul><li>Stone basin cut out, steel sink set in</li><li>Practical, lowest cost of the two replacements</li><li>Solves the sealing problem for good</li></ul><div class="pick"><span class="cb">I choose A</span></div></div>
+ <div class="opt"><img src="../assets/kueche_opt_b.jpg"><div class="oh"><b>B</b>Farmhouse / ceramic basin</div><ul><li>Stone basin cut out, white ceramic basin set in</li><li>Design statement, higher cost</li><li>Solves the sealing problem for good</li></ul><div class="pick"><span class="cb">I choose B</span></div></div>
+ <div class="opt"><img src="../assets/kueche_opt_c.jpg"><div class="oh"><b>C</b>Keep &amp; re-seal</div><ul><li>Stone basin stays; all joints re-sealed with epoxy</li><li>Lowest cost, no cutting risk to the worktop</li><li>Less durable — joints need checking over the years</li></ul><div class="pick"><span class="cb">I choose C</span></div></div>
+</div>
+<p class="note" style="margin:1mm 0 2mm">Images: AI visualizations based on your own photo — a design preview, not a construction drawing.</p>
+<div class="q"><div class="qt"><span class="qn">Q21</span>Kitchen — anything else we should know? Floor or neighbouring cabinets affected? Sink size or tap preference?</div><div class="lines"><div></div><div></div></div></div>
+
+<hr class="sep">
+<div class="num">09</div><h2>Is everything covered? Check it</h2>
+<p class="sub">This is what the plan already includes. If anything's missing — write it below and it goes straight in.</p>
+<div class="ck">
+ <div class="ci">Damp diagnosis + inspection openings</div><div class="ci">Structural check of all beams</div>
+ <div class="ci">Reinforcing broken beam &amp; sagging section</div><div class="ci">Stone wall restoration/finish (A/B)</div>
+ <div class="ci">Barrier against rising damp (after diagnosis)</div><div class="ci">Drain re-sealing</div>
+ <div class="ci">Chimney extraction fans installation</div><div class="ci">New code-compliant staircase (A/B)</div>
+ <div class="ci">Kitchen ceiling cracks</div><div class="ci">Patio bathroom</div>
+ <div class="ci">Bathroom ceiling: bonding bridge + double skim + paint</div>
+ <div class="ci new">Kitchen sink: leaking stone-basin joints → sealed steel/farmhouse basin (or re-seal)</div>
+ <div class="ci new">Water-damaged cabinet under the sink: replace; dry board &amp; batten; check pipework</div>
+ <div class="ci new">Quartz worktop: protective procedure + fixed contingency priced up front</div>
+</div>
+<div class="q"><div class="qt"><span class="qn">Q15</span>Is anything missing from this list? What else concerns you or should be included?</div><div class="lines"><div></div><div></div><div></div><div></div></div></div>
+<div class="q"><div class="qt"><span class="qn">Q16</span>From mid-September: who can give us access to the house?</div><div class="lines"><div></div><div></div></div></div>
+<div class="q"><div class="qt"><span class="qn">Q17</span>Happy for our lawyer to file the administrative notification for you (simple e-signature power of attorney)?</div><div class="opts"><span class="cb">Yes, agreed</span><span class="cb">Let's discuss</span></div></div>
+<div class="q"><div class="qt"><span class="qn">Q18</span>The chimney extraction fans…</div><div class="opts"><span class="cb">Ordered</span><span class="cb">Delivered</span><span class="cb">Not sure</span></div></div>
+<div class="q"><div class="qt"><span class="qn">Q19</span>Which wall panels exactly did you want replaced?</div><div class="lines"><div></div><div></div></div></div>
+<div class="q"><div class="qt"><span class="qn">Q20</span>Shall we also quote the full repainting after the works?</div><div class="opts"><span class="cb">Yes, agreed</span><span class="cb">Let's discuss</span><span class="cb">No</span></div></div>
+
+<hr class="sep">
+<div class="num">10</div><h2>Send us more details as photos</h2>
+<p class="sub">Cracks, old documents, corners that worry you: photograph them with your phone and send them via WhatsApp along with these pages. Tick off what you've sent:</p>
+<ul class="ph">
+ <li><span class="cb">Lower wall lining up close (skirting area, transitions)</span></li>
+ <li><span class="cb">Documents or invoices from the earlier renovation (photograph them)</span></li>
+ <li><span class="cb">Kitchen ceiling cracks (close-up + overview)</span></li>
+ <li><span class="cb">Cracks in other rooms (if any)</span></li>
+ <li><span class="cb">Patio bathroom complete (ceiling, WC, walls)</span></li>
+ <li><span class="cb">Damp or mould spots you notice</span></li>
+ <li><span class="cb">Kitchen sink &amp; cabinet — received 19 Aug, thank you ✓</span></li>
+ <li><span class="cb">Anything else you want to show us</span></li>
+</ul>
+<div class="done"><h3>Done? Review &amp; send</h3>Photograph or scan your filled-in pages and send them — together with your detail photos — to <b>Angelo · WhatsApp +49 174 201 0380</b>. We answer the same day. You can also answer partially and send the rest later — nothing gets lost.</div>
+<p class="foot">Prepared personally for the owners of Calle de Belfast 17, Alicante · v2 · 19 August 2026. Observations from scan and site visit are warning signs, not a diagnosis; structural, damp and permit questions are confirmed by the qualified checks above. February 2027 is our planning target.</p>
+</body></html>

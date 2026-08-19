@@ -91,7 +91,8 @@ h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:700;line-height:1.15;margin-
   margin-top:20px;font-size:.95rem}
 /* options */
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:820px){.opts{grid-template-columns:1fr}}
+.opts3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:820px){.opts,.opts3{grid-template-columns:1fr}}
 .opt{background:var(--white);border:2px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:.2s;position:relative}
 .opt img{width:100%;height:300px;object-fit:cover;display:block}
 .opt .oh{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--ink);color:var(--sand)}
@@ -405,6 +406,30 @@ img,iframe{max-width:100%}
       </div>
     </div></div>
   </div>
+  <div class="card" style="margin-top:18px"><div class="pad">
+    <span class="tag" data-i="t_new2"></span><h3 data-i="k_h"></h3><p data-i="k_p"></p>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px">
+      <img src="assets/kueche_spuele.jpg" alt="" style="width:100%;height:90px;object-fit:cover;border-radius:8px">
+      <img src="assets/kueche_fuge.jpg" alt="" style="width:100%;height:90px;object-fit:cover;border-radius:8px">
+      <img src="assets/kueche_schrank.jpg" alt="" style="width:100%;height:90px;object-fit:cover;border-radius:8px">
+      <img src="assets/kueche_unterseite.jpg" alt="" style="width:100%;height:90px;object-fit:cover;border-radius:8px">
+    </div>
+    <div class="callout" data-i="k_risk" style="margin-top:12px"></div>
+  </div></div>
+  <h3 style="margin:18px 0 8px;font-size:1.1rem" data-i="k_opt_h"></h3>
+  <div class="opts opts3" data-radio="q21">
+    <div class="opt" data-v="A"><span class="pick" data-i="pick"></span><img src="assets/kueche_opt_a.jpg" alt="" style="height:150px">
+      <div class="oh"><span class="ab">A</span><span data-i="k_a_t"></span></div>
+      <ul><li data-i="ka1"></li><li data-i="ka2"></li></ul></div>
+    <div class="opt" data-v="B"><span class="pick" data-i="pick"></span><img src="assets/kueche_opt_b.jpg" alt="" style="height:150px">
+      <div class="oh"><span class="ab">B</span><span data-i="k_b_t"></span></div>
+      <ul><li data-i="kb1"></li><li data-i="kb2"></li></ul></div>
+    <div class="opt" data-v="C"><span class="pick" data-i="pick"></span><img src="assets/kueche_opt_c.jpg" alt="" style="height:150px">
+      <div class="oh"><span class="ab">C</span><span data-i="k_c_t"></span></div>
+      <ul><li data-i="kc1"></li><li data-i="kc2"></li></ul></div>
+  </div>
+  <p class="imgnote" data-i="viznote"></p>
+  <div class="q" style="margin-top:14px"><div class="qt"><span class="qn">Q22</span><span data-i="q22"></span></div><textarea data-store="q22"></textarea></div>
 </div></section>
 
 <section id="scope"><div class="wrap reveal">
@@ -484,6 +509,12 @@ es: {
   h1a:"Su casa, entendida", h1b:"antes de reformarla.",
   lede:"Hemos escaneado la vivienda en 3D y analizado estructura, humedades y superficies. Esta guía interactiva le explica lo que vimos, le muestra opciones — y recoge sus respuestas y comentarios para preparar un presupuesto que acierte exactamente.",
   livenote:"Documento vivo: sus respuestas y comentarios nos llegan directamente por WhatsApp con un clic.",
+  t_new2:"Nuevo · de sus fotos del 19 de agosto", k_h:"Fregadero y mueble de cocina — daño por agua", k_p:"Sus fotos lo muestran: la pila de piedra está hecha de varias placas y sus juntas no están selladas — el agua lleva tiempo filtrándose: el tablero del mueble está hinchado y agrietado, y el soporte bajo la encimera está manchado. Incluiremos una pila bien sellada (tres opciones abajo), la sustitución del mueble dañado, el secado del soporte y la revisión de las tuberías. Como la entrada de agua sigue activa, lo proponemos en la Fase 1.",
+  k_risk:"Su pregunta sobre el cuarzo: es resistente en el uso, pero frágil al cortarlo in situ o si la placa pierde apoyo. Por eso: apuntalamos la encimera antes de tocar el mueble, el corte lo hace un marmolista con herramienta húmeda y revisamos fisuras antes. Y el peor caso lo presupuestamos ya: una contingencia fija, que solo paga si ocurre. La opción C evita el corte por completo.",
+  k_opt_h:"Tres formas de arreglar la pila — ¿cuál prefiere?", k_a_t:"Pila de acero inoxidable", ka1:"Se corta la pila de piedra, se encaja la de acero", ka2:"Práctica, la más económica de las dos sustituciones",
+  k_b_t:"Pila tipo cuba / cerámica", kb1:"Se corta la pila de piedra, cuba blanca encajada", kb2:"Más diseño, mayor coste",
+  k_c_t:"Conservar y resellar", kc1:"La pila de piedra se queda; juntas reselladas con epoxi", kc2:"Lo más económico y sin riesgo de corte; menos duradero",
+  q21:"Fregadero — opción elegida", q22:"Cocina — ¿algo más? ¿Suelo o muebles vecinos afectados? ¿Preferencia de tamaño de pila o grifo?",
   ideas_h:"Ideas para añadir con un “+”", ideas_s:"Asesoramiento creativo: cosas que ahora — con andamios montados y paredes abiertas — salen mucho mejor y más baratas que después. Añada lo que le inspire; lo calculamos como opción.",
   t_idea:"Idea", add:"+ Añadir a mi plan", added:"✓ Añadido",
   w_start:"Empezar — 5 minutos", w_next:"Siguiente", w_back:"Atrás", w_tosummary:"Al resumen", w_step:"Paso", w_of:"de", n_send:"Enviar",
@@ -546,7 +577,7 @@ es: {
   q11:"¿Preferencias de material o estilo (blanco + roble como en las imágenes, u otras)?",
   q12:"Para proponerle bien: ¿solución funcional o pieza de diseño?",
   opt_func:"Funcional", opt_design:"Pieza de diseño",
-  extra_h:"Dos puntos que añadimos al plan", extra_s:"Detectados en el escaneo además de lo hablado en la visita.",
+  extra_h:"Cocina y baño — tres puntos en el plan", extra_s:"Dos detectados en el escaneo, uno que usted planteó el 19 de agosto con sus fotos.",
   ex1h:"Fisuras en el techo de la cocina", ex1:"Las cartografiaremos en el diagnóstico. ¿Conoce más grietas (también en otras estancias)? ¿Desde cuándo?",
   ex2h:"El baño/lavadero del patio", ex2:"Pintura desconchada, humedad y aseo a la intemperie. ¿Qué le gustaría hacer?",
   opt_renovate:"Renovarlo bien", opt_repair:"Solo sanear/impermeabilizar", opt_advise:"Aconséjenme",
@@ -570,6 +601,12 @@ en: {
   h1a:"Your house, understood", h1b:"before it's renovated.",
   lede:"We scanned the home in 3D and analysed structure, humidity and surfaces. This interactive guide explains what we saw, shows you options — and collects your answers and comments so the final quotation hits exactly right.",
   livenote:"A living document: your answers and comments reach us directly via WhatsApp with one click.",
+  t_new2:"New · from your photos of 19 August", k_h:"Kitchen sink & cabinet — water damage", k_p:"Your photos show it: the stone sink is built from several slabs and their joints are unsealed — water has been seeping through for a while: the cabinet board is swollen and cracked, the support under the worktop is stained. We'll include a properly sealed sink (three options below), replacement of the damaged cabinet, drying of the support and a pipework check. Because the ingress is still active, we propose it for Phase 1.",
+  k_risk:"Your question about the quartz: strong in daily use, but brittle when cut in place or when a slab loses its support. So: we support the worktop before touching the cabinet, a stone specialist cuts with wet tools, and we check for hairline cracks first. And we price the worst case up front — a fixed contingency you only pay if it happens. Option C avoids cutting entirely.",
+  k_opt_h:"Three ways to fix the sink — which do you prefer?", k_a_t:"Stainless-steel sink", ka1:"Stone basin cut out, steel sink set in", ka2:"Practical, lowest cost of the two replacements",
+  k_b_t:"Farmhouse / ceramic basin", kb1:"Stone basin cut out, white ceramic basin set in", kb2:"Design statement, higher cost",
+  k_c_t:"Keep & re-seal", kc1:"Stone basin stays; joints re-sealed with epoxy", kc2:"Lowest cost, no cutting risk; less durable",
+  q21:"Kitchen sink — chosen option", q22:"Kitchen — anything else? Floor or neighbouring cabinets affected? Sink size or tap preference?",
   ideas_h:"Ideas to add with a “+”", ideas_s:"Creative consulting: things that are far easier and cheaper NOW — scaffolding up, walls open — than later. Add whatever inspires you; we'll calculate it as an option.",
   t_idea:"Idea", add:"+ Add to my plan", added:"✓ Added",
   w_start:"Start — 5 minutes", w_next:"Next", w_back:"Back", w_tosummary:"To summary", w_step:"Step", w_of:"of", n_send:"Send",
@@ -632,7 +669,7 @@ en: {
   q11:"Material or style preferences (white + oak as visualized, or something else)?",
   q12:"So we propose well: functional solution or design statement?",
   opt_func:"Functional", opt_design:"Design statement",
-  extra_h:"Two points we're adding to the plan", extra_s:"Detected in the scan on top of what we discussed on site.",
+  extra_h:"Kitchen & bathroom — three points in the plan", extra_s:"Two detected in the scan, one you raised on 19 August with your photos.",
   ex1h:"Kitchen ceiling cracks", ex1:"We'll map them during the diagnosis. Do you know of more cracks (other rooms too)? Since when?",
   ex2h:"The patio bathroom/laundry", ex2:"Peeling paint, damp and an open-air WC. What would you like to do?",
   opt_renovate:"Renovate properly", opt_repair:"Just repair/seal", opt_advise:"Advise me",
@@ -656,6 +693,12 @@ de: {
   h1a:"Ihr Haus, verstanden —", h1b:"bevor saniert wird.",
   lede:"Wir haben das Haus in 3D gescannt und Statik, Feuchtigkeit und Oberflächen analysiert. Dieser interaktive Guide erklärt, was wir gesehen haben, zeigt Optionen — und sammelt Ihre Antworten und Kommentare, damit das finale Angebot exakt trifft.",
   livenote:"Ein lebendes Dokument: Ihre Antworten und Kommentare erreichen uns mit einem Klick per WhatsApp.",
+  t_new2:"Neu · aus Ihren Fotos vom 19. August", k_h:"Küchenspüle & Unterschrank — Wasserschaden", k_p:"Ihre Fotos zeigen es: Das Steinbecken besteht aus mehreren Platten, deren Fugen nicht abgedichtet sind — Wasser dringt seit Längerem ein: Die Schrankplatte ist aufgequollen und gerissen, die Trägerkonstruktion unter der Platte fleckig. Wir nehmen eine sauber abgedichtete Spüle (drei Optionen unten), den Ersatz des beschädigten Unterschranks, das Trocknen der Trägerkonstruktion und eine Leitungsprüfung auf. Da der Wassereintritt aktiv ist, schlagen wir Phase 1 vor.",
+  k_risk:"Ihre Frage zum Quarz: im Alltag robust, aber spröde beim Schnitt vor Ort oder wenn die Platte ihr Auflager verliert. Darum: Wir stützen die Platte ab, bevor der Schrank angefasst wird, ein Steinmetz schneidet nass, und wir prüfen vorab auf Haarrisse. Den Worst Case preisen wir gleich ein — als fixe Contingency, die Sie nur zahlen, wenn er eintritt. Option C vermeidet den Schnitt ganz.",
+  k_opt_h:"Drei Wege, die Spüle zu lösen — welcher gefällt Ihnen?", k_a_t:"Edelstahlspüle", ka1:"Steinbecken herausgetrennt, Edelstahl eingesetzt", ka2:"Praktisch, günstigste der beiden Ersatzlösungen",
+  k_b_t:"Farmhouse-/Keramikbecken", kb1:"Steinbecken herausgetrennt, weißes Keramikbecken eingesetzt", kb2:"Design-Statement, höhere Kosten",
+  k_c_t:"Behalten & neu verfugen", kc1:"Steinbecken bleibt; Fugen mit Epoxid neu abgedichtet", kc2:"Am günstigsten, kein Schnittrisiko; weniger dauerhaft",
+  q21:"Küchenspüle — gewählte Option", q22:"Küche — sonst noch etwas? Boden oder Nachbarschränke betroffen? Wunsch zu Spülengröße oder Armatur?",
   ideas_h:"Ideen zum Hinzufügen mit „+“", ideas_s:"Kreative Beratung: Dinge, die JETZT — Gerüst steht, Wände offen — viel einfacher und günstiger gehen als später. Fügen Sie hinzu, was Sie inspiriert; wir kalkulieren es als Option.",
   t_idea:"Idee", add:"+ Zu meinem Plan", added:"✓ Hinzugefügt",
   w_start:"Los geht's — 5 Minuten", w_next:"Weiter", w_back:"Zurück", w_tosummary:"Zur Übersicht", w_step:"Schritt", w_of:"von", n_send:"Senden",
@@ -718,7 +761,7 @@ de: {
   q11:"Material- oder Stilwünsche (Weiß + Eiche wie visualisiert, oder anders)?",
   q12:"Damit wir passend vorschlagen: Funktionslösung oder Design-Statement?",
   opt_func:"Funktional", opt_design:"Design-Statement",
-  extra_h:"Zwei Punkte, die wir in den Plan aufnehmen", extra_s:"Im Scan entdeckt — zusätzlich zum Besprochenen.",
+  extra_h:"Küche & Bad — drei Punkte im Plan", extra_s:"Zwei im Scan entdeckt, einen haben Sie am 19. August mit Ihren Fotos eingebracht.",
   ex1h:"Risse in der Küchendecke", ex1:"Wir kartieren sie in der Diagnose. Kennen Sie weitere Risse (auch andere Räume)? Seit wann?",
   ex2h:"Das Patio-Bad / die Waschküche", ex2:"Abblätternde Farbe, Feuchte, WC im Freien. Was möchten Sie hier?",
   opt_renovate:"Richtig renovieren", opt_repair:"Nur sanieren/abdichten", opt_advise:"Beraten Sie mich",
@@ -779,7 +822,7 @@ document.querySelectorAll('[data-radio]').forEach(group => {
   });
 });
 
-const KEYS = ['q1','q2','q3','q4','q5','q6','q7','q8','q8b','q9','q10','q11','q12','q13','q14','q15','q16','q17','q18','q19','q20','a1','a2','a3','a4','a5','a6'];
+const KEYS = ['q1','q2','q3','q4','q5','q6','q7','q8','q8b','q9','q10','q11','q12','q13','q14','q15','q16','q17','q18','q19','q20','q21','q22','a1','a2','a3','a4','a5','a6'];
 const ADD_TITLES = {a1:'i1h',a2:'i2h',a3:'i3h',a4:'i4h',a5:'i5h',a6:'i6h'};
 const CKEYS = ['c_f1','c_f2','c_f3','c_f4','c_stone'];
 function updateCount() {
@@ -791,12 +834,12 @@ function compile() {
   const t = I[S.lang];
   let out = t.wa_head + '\n';
   KEYS.forEach(k => { const v = store(k).trim(); if (!v) return;
-    if (k.startsWith('a')) { out += '\n+ ' + t[ADD_TITLES[k]]; } else { out += '\n' + k.toUpperCase() + ': ' + v; } });
+    if (k.startsWith('a')) { out += '\n+ ' + t[ADD_TITLES[k]]; } else { const lab = (k==='q21' && {A:t.k_a_t,B:t.k_b_t,C:t.k_c_t}[v]) || (k==='q8' && {A:t.stone_a_t,B:t.stone_b_t}[v]) || (k==='q10' && {A:t.stairs_a_t,B:t.stairs_b_t}[v]) || v; out += '\n' + k.toUpperCase() + ': ' + lab; } });
   CKEYS.forEach(k => { const a = logGet(k); a.forEach(e => { out += '\n[' + k + ' ' + fmtT(e.t) + (e.struck ? ' DURCHGESTRICHEN' : '') + ']: ' + e.text; }); });
   if (PHOTOS.length) out += '\n' + I[S.lang].wa_photos;
   return out;
 }
-const VALMAP = {yes:'opt_yes',talk:'opt_talk',maybe:'opt_talk',outside:'opt_roof_out',inside:'opt_roof_in',info:'opt_roof_info',no:'opt_no',mix:'opt_mix',white:'opt_white',natural:'opt_natural',functional:'opt_func',design:'opt_design',renovate:'opt_renovate',repair:'opt_repair',advise:'opt_advise',ordered:'opt_ordered',delivered:'opt_delivered',unknown:'opt_unknown',A:'A',B:'B'};
+const VALMAP = {yes:'opt_yes',talk:'opt_talk',maybe:'opt_talk',outside:'opt_roof_out',inside:'opt_roof_in',info:'opt_roof_info',no:'opt_no',mix:'opt_mix',white:'opt_white',natural:'opt_natural',functional:'opt_func',design:'opt_design',renovate:'opt_renovate',repair:'opt_repair',advise:'opt_advise',ordered:'opt_ordered',delivered:'opt_delivered',unknown:'opt_unknown',A:'A',B:'B',C:'C'};
 function valLabel(t, v){ const m = VALMAP[v]; return m && t[m] ? t[m] : v; }
 function buildPdfDom(){
   const t = I[S.lang];
@@ -838,7 +881,7 @@ document.getElementById('copybtn').addEventListener('click', async () => {
 
 // wizard + sprungnavigation
 const NAV = [['tour','n_tour'],['findings','n_find'],['damp','n_damp'],['roof','n_roof'],['stone','n_stone'],['stairs','n_stairs'],['ideas','n_ideas'],['extra','n_extra'],['scope','n_scope'],['photos','n_photos'],['send','n_send']];
-const SECKEYS = {damp:['q1','q2','q3','q4'],roof:['q5','q6','q7'],stone:['q8','q8b','q9'],stairs:['q10','q11','q12'],ideas:['a1','a2','a3','a4','a5','a6'],extra:['q13','q14'],scope:['q15','q16','q17','q18','q19','q20']};
+const SECKEYS = {damp:['q1','q2','q3','q4'],roof:['q5','q6','q7'],stone:['q8','q8b','q9'],stairs:['q10','q11','q12'],ideas:['a1','a2','a3','a4','a5','a6'],extra:['q13','q14','q21','q22'],scope:['q15','q16','q17','q18','q19','q20']};
 const STEPS = ['hero'].concat(NAV.map(n => n[0]));
 document.body.classList.add('wizard');
 const _urlStep = new URLSearchParams(location.search).get('step');
